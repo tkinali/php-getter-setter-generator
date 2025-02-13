@@ -1,0 +1,13 @@
+{
+    "phpgsg.command": "Getter ve Setter'ları Oluştur",
+    "phpgsg.quickPick.placeholder": "Getter/setter oluşturulacak özellikleri seçin",
+    "phpgsg.message.success": "Getter ve setter metodları başarıyla oluşturuldu!",
+    "phpgsg.message.error": "Getter ve setter oluşturulurken hata oluştu.",
+    "phpgsg.displayName": "PHP Getter ve Setter Oluşturucu",
+    "phpgsg.description": "PHP sınıfları için getter ve setter metodları oluşturur",
+    "phpgsg.config.title": "Getter Setter Oluşturucu",
+    "phpgsg.config.getter.description": "Getter metodları için şablon. {{name}}, {{type}}, {{variable}} ve {{nullable}} yer tutucularını kullanın.",
+    "phpgsg.config.setter.description": "Setter metodları için şablon. {{name}}, {{type}} ve {{nullable}} yer tutucularını kullanın.",
+    "phpgsg.config.autoGenerate.description": "Hızlı seçim penceresini atla ve tüm getter/setter metodlarını otomatik olarak oluştur",
+    "phpgsg.config.sortBy.description": "Getter ve Setter'ları özellik sırasına göre oluştur."
+}

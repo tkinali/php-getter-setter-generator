@@ -1,0 +1,13 @@
+{
+    "phpgsg.command": "Generate Getters and Setters",
+    "phpgsg.quickPick.placeholder": "Select properties to generate getters/setters",
+    "phpgsg.message.success": "Getters and setters generated successfully!",
+    "phpgsg.message.error": "Error generating getters and setters.",
+    "phpgsg.displayName": "PHP Getter and Setter Generator",
+    "phpgsg.description": "PHP Getter and Setter Generator",
+    "phpgsg.config.title": "Getter Setter Generator",
+    "phpgsg.config.getter.description": "Template for getter methods. Use {{name}}, {{type}}, {{variable}} and {{nullable}} as placeholders.",
+    "phpgsg.config.setter.description": "Template for setter methods. Use {{name}}, {{type}}, and {{nullable}} as placeholders.",
+    "phpgsg.config.autoGenerate.description": "Skip the quick pick window and automatically generate all available getter/setter methods",
+    "phpgsg.config.sortBy.description": "Sort getters and setters by property order"
+}

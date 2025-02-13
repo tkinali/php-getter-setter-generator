@@ -1,0 +1,102 @@
+{
+  "name": "php-getter-setter-generator",
+  "displayName": "PHP Getter & Setter Generator",
+  "description": "Generates getter and setter methods for PHP7/8 classes",
+  "version": "0.0.1",
+  "publisher": "tkinali",
+  "author": "Tuncay KINALI <tkinali@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkinali/PHP-Getter-Setter-Generator"
+  },
+  "bugs": {
+    "url": "https://github.com/tkinali/PHP-Getter-Setter-Generator/issues"
+  },
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "php",
+    "php8",
+    "getter",
+    "getters",
+    "setter",
+    "setters"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "command": "phpgsg.generateGettersAndSetters",
+          "group": "navigation",
+          "when": "editorLangId == php"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "phpgsg.generateGettersAndSetters",
+        "title": "%phpgsg.command%"
+      }
+    ],
+    "configuration": {
+      "title": "%phpgsg.config.title%",
+      "properties": {
+        "phpgsg.getterSetterGenerator.autoGenerate": {
+          "type": "boolean",
+          "default": false,
+          "description": "%phpgsg.config.autoGenerate.description%"
+        },
+        "phpgsg.getterSetterGenerator.getterTemplate": {
+          "type": "string",
+          "default": "public function get{{name}}(): {{nullable}}{{type}}\n    {\n        return $this->{{variable}};\n    }",
+          "description": "%phpgsg.config.getter.description%",
+          "editPresentation": "multilineText"
+        },
+        "phpgsg.getterSetterGenerator.setterTemplate": {
+          "type": "string",
+          "default": "public function set{{name}}({{nullable}}{{type}} ${{variable}}): self\n    {\n        $this->{{variable}} = ${{variable}};\n        return $this;\n    }",
+          "description": "%phpgsg.config.setter.description%",
+          "editPresentation": "multilineText"
+        },
+        "phpgsg.getterSetterGenerator.sortByPropertyOrder": {
+          "type": "boolean",
+          "default": true,
+          "description": "%phpgsg.config.sortBy.description%"
+        }
+      }
+    }
+  },
+  "l10n": "./l10n",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
