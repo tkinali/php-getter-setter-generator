@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
         if (editor) {
             const document = editor.document;
             const text = document.getText();
-            const classRegex = /class\s+(\w+)\s*{([\s\S]*)}/g; // Tüm sınıf içeriğini al
+            const classRegex = /class\s+(\w+).*\s*{([\s\S]*)}/g; // Tüm sınıf içeriğini al
             const privateVarRegex = /private\s+(\??[\w\\]+)\s*\$(\w+)\s*(?:=\s*[^;]+)?;/g;
             const methodRegex = /public\s+function\s+(get|set)(\w+)\s*\(/g;
 
@@ -87,7 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
                 if (!selectedVars) {
                     return; // Kullanıcı seçim yapmadan çıktı
                 }
-                
+
                 // Mevcut getter ve setter metodlarını bul ve sakla
                 const existingMethodsMap = new Map<string, string>();
                 const methodRegexWithContent = /(\s*public function (get|set)(\w+)\([^)]*\)[^}]*})/g;
@@ -104,7 +104,7 @@ export function activate(context: vscode.ExtensionContext) {
                     classContent = classContent.replace(/\s*public function (get|set)\w+\([^)]*\)[^}]*}/g, '');
                 }
                 classContent = classContent.trim();
-            
+
                 // Tüm private değişkenler için getter ve setter metodlarını oluştur
                 let methods = '';
                 privateVars.forEach(variable => {
