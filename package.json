@@ -2,7 +2,7 @@
   "name": "php-getter-setter-generator",
   "displayName": "PHP Getter & Setter Generator",
   "description": "Generates getter and setter methods for PHP7/8 classes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "tkinali",
   "author": "Tuncay KINALI <tkinali@gmail.com>",
   "license": "MIT",
@@ -15,7 +15,7 @@
   },
   "icon": "images/icon.png",
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
@@ -35,7 +35,7 @@
       "editor/context": [
         {
           "command": "phpgsg.generateGettersAndSetters",
-          "group": "navigation",
+          "group": "1_phpgsg@1",
           "when": "editorLangId == php"
         }
       ]

@@ -82,8 +82,8 @@ export function activate(context: vscode.ExtensionContext) {
                         placeHolder: messages['phpgsg.quickPick.placeholder'],
                         canPickMany: true
                     }
-                ) ?? [];
-                
+                ) ?? false;
+
                 if (!selectedVars) {
                     return; // Kullanıcı seçim yapmadan çıktı
                 }

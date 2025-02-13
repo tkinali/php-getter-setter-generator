@@ -1,3 +1,5 @@
+[English](./README_EN.md)
+
 # PHP Getter ve Setter Generator
 
 PHP sınıfları için getter ve setter metodlarını otomatik olarak oluşturan bir Visual Studio Code eklentisi.
@@ -13,7 +15,7 @@ PHP sınıfları için getter ve setter metodlarını otomatik olarak oluşturan
 ## Kullanım
 
 1. PHP dosyanızı açın
-2. Sağ tıklayın ve "Generate Getters and Setters" seçeneğini seçin
+2. Sağ tıklayın ve "Getter ve Setter'ları Oluştur" seçeneğini seçin
 3. Getter ve setter'lar otomatik olarak oluşturulacaktır
 
 ## Ayarlar
@@ -55,7 +57,7 @@ Bu eklenti aşağıdaki ayarları sunar:
 
 ## Gereksinimler
 
-- Visual Studio Code 1.97.0 veya üzeri
+- Visual Studio Code 1.74.0 veya üzeri
 - PHP dosyaları
 
 ## Kurulum
