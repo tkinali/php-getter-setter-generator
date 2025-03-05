@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "选择要生成 getter/setter 的属性",
+    "phpgsg.message.success": "Getter 和 setter 生成成功！",
+    "phpgsg.message.error": "生成 getter 和 setter 时出错。",
+    "phpgsg.displayName": "PHP Getter 和 Setter 生成器",
+    "phpgsg.description": "PHP Getter 和 Setter 生成器",
+
+    "phpgsg.command.generate_getter": "生成 Getter",
+    "phpgsg.command.generate_setter": "生成 Setter",
+    "phpgsg.command.generate_getter_and_setter": "生成 Getter 和 Setter",
+
+    "phpgsg.config.title": "Getter Setter 生成器",
+    "phpgsg.config.autoGenerate.description": "跳过快速选择窗口并自动生成所有可用的 getter/setter 方法",
+    "phpgsg.config.sortMethods.description": "在组织方法时，您可以优先考虑 getter 或 setter，或者将它们混合在一起。",
+    "phpgsg.config.orderBy.description": "在对方法进行排序时，您可以选择按字母顺序或按类中指定的属性顺序进行排序。",
+    "phpgsg.config.indentSize.description": "确定缩进的大小（以空格数为单位）。",
+    "phpgsg.config.indentWithTab.description": "使用制表符代替空格作为缩进字符。（indentSize 选项计算为 1）",
+    "phpgsg.config.fluentInterface.description": "为流畅接口（方法链）在设置器方法中添加`return $this;`。",
+
+    "phpgsg.config.enum.property_order": "属性顺序",
+    "phpgsg.config.enum.ascending": "升序",
+    "phpgsg.config.enum.descending": "降序",
+    "phpgsg.config.enum.getters_setters": "Getter + Setter",
+    "phpgsg.config.enum.getters_first": "Getter 优先",
+    "phpgsg.config.enum.setters_first": "Setter 优先",
+
+    "phpgsg.errors.no_class_found": "文件中未找到 PHP 类。"
+}

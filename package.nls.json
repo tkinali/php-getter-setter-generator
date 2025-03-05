@@ -1,13 +1,28 @@
 {
-    "phpgsg.command": "Generate Getters and Setters",
     "phpgsg.quickPick.placeholder": "Select properties to generate getters/setters",
     "phpgsg.message.success": "Getters and setters generated successfully!",
     "phpgsg.message.error": "Error generating getters and setters.",
     "phpgsg.displayName": "PHP Getter and Setter Generator",
     "phpgsg.description": "PHP Getter and Setter Generator",
+
+    "phpgsg.command.generate_getter": "Generate Getters",
+    "phpgsg.command.generate_setter": "Generate Setters",
+    "phpgsg.command.generate_getter_and_setter": "Generate Getters and Setters",
+
     "phpgsg.config.title": "Getter Setter Generator",
-    "phpgsg.config.getter.description": "Template for getter methods. Use {{name}}, {{type}}, {{variable}} and {{nullable}} as placeholders.",
-    "phpgsg.config.setter.description": "Template for setter methods. Use {{name}}, {{type}}, and {{nullable}} as placeholders.",
     "phpgsg.config.autoGenerate.description": "Skip the quick pick window and automatically generate all available getter/setter methods",
-    "phpgsg.config.sortBy.description": "Sort getters and setters by property order"
+    "phpgsg.config.sortMethods.description": "When organizing methods, you can prioritize getters or setters, or mix them up.",
+    "phpgsg.config.orderBy.description": "When sorting the methods, you can choose to sort alphabetically or by the property order specified in the class.",
+    "phpgsg.config.indentSize.description": "Determines the size (in number of spaces) of an indent.",
+    "phpgsg.config.indentWithTab.description": "Use tab character instead of space as indentation character. (indentSize option is calculated as 1)",
+    "phpgsg.config.fluentInterface.description": "Adds `return $this;` to setter methods for fluent interface (method chaining).",
+
+    "phpgsg.config.enum.property_order": "Property Order",
+    "phpgsg.config.enum.ascending": "Ascending",
+    "phpgsg.config.enum.descending": "Descending",
+    "phpgsg.config.enum.getters_setters": "Getters + Setters",
+    "phpgsg.config.enum.getters_first": "Getters First",
+    "phpgsg.config.enum.setters_first": "Setters First",
+
+    "phpgsg.errors.no_class_found": "A PHP class was not found in the file."
 }

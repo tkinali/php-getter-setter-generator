@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Изберете свойства за генериране на гетери/сетери",
+    "phpgsg.message.success": "Гетерите и сетерите бяха генерирани успешно!",
+    "phpgsg.message.error": "Грешка при генериране на гетери и сетери.",
+    "phpgsg.displayName": "PHP Генератор на гетери и сетери",
+    "phpgsg.description": "PHP Генератор на гетери и сетери",
+
+    "phpgsg.command.generate_getter": "Генериране на гетери",
+    "phpgsg.command.generate_setter": "Генериране на сетери",
+    "phpgsg.command.generate_getter_and_setter": "Генериране на гетери и сетери",
+
+    "phpgsg.config.title": "Генератор на гетери и сетери",
+    "phpgsg.config.autoGenerate.description": "Пропуснете прозореца за бърз избор и автоматично генерирайте всички налични гетери/сетери методи",
+    "phpgsg.config.sortMethods.description": "При организиране на методи, можете да приоритизирате гетери или сетери, или да ги смесите.",
+    "phpgsg.config.orderBy.description": "При сортиране на методи, можете да изберете да сортирате по азбучен ред или по реда на свойствата, зададен в класа.",
+    "phpgsg.config.indentSize.description": "Определя размера (в брой интервали) на отстъп.",
+    "phpgsg.config.indentWithTab.description": "Използвайте табулаторен символ вместо интервал като символ за отстъп. (Опцията indentSize се изчислява като 1)",
+    "phpgsg.config.fluentInterface.description": "Добавя `return $this;` към setter методи за плавен интерфейс (верижно извикване на методи)",
+
+    "phpgsg.config.enum.property_order": "Ред на свойствата",
+    "phpgsg.config.enum.ascending": "Възходящ",
+    "phpgsg.config.enum.descending": "Низходящ",
+    "phpgsg.config.enum.getters_setters": "Гетери + Сетери",
+    "phpgsg.config.enum.getters_first": "Първо гетери",
+    "phpgsg.config.enum.setters_first": "Първо сетери",
+
+    "phpgsg.errors.no_class_found": "Във файла не беше намерен PHP клас."
+}

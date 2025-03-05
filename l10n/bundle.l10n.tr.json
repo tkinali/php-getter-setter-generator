@@ -1,13 +1,28 @@
 {
-    "phpgsg.command": "Getter ve Setter'ları Oluştur",
-    "phpgsg.quickPick.placeholder": "Getter/setter oluşturulacak özellikleri seçin",
-    "phpgsg.message.success": "Getter ve setter metodları başarıyla oluşturuldu!",
-    "phpgsg.message.error": "Getter ve setter oluşturulurken hata oluştu.",
+    "phpgsg.quickPick.placeholder": "Getter/setter oluşturmak için özellikleri seçin",
+    "phpgsg.message.success": "Getter ve setter'lar başarıyla oluşturuldu!",
+    "phpgsg.message.error": "Getter ve setter'lar oluşturulurken hata oluştu.",
     "phpgsg.displayName": "PHP Getter ve Setter Oluşturucu",
-    "phpgsg.description": "PHP sınıfları için getter ve setter metodları oluşturur",
+    "phpgsg.description": "PHP Getter ve Setter Oluşturucu",
+
+    "phpgsg.command.generate_getter": "Getter'ları Oluştur",
+    "phpgsg.command.generate_setter": "Setter'ları Oluştur",
+    "phpgsg.command.generate_getter_and_setter": "Getter ve Setter'ları Oluştur",
+
     "phpgsg.config.title": "Getter Setter Oluşturucu",
-    "phpgsg.config.getter.description": "Getter metodları için şablon. {{name}}, {{type}}, {{variable}} ve {{nullable}} yer tutucularını kullanın.",
-    "phpgsg.config.setter.description": "Setter metodları için şablon. {{name}}, {{type}} ve {{nullable}} yer tutucularını kullanın.",
-    "phpgsg.config.autoGenerate.description": "Hızlı seçim penceresini atla ve tüm getter/setter metodlarını otomatik olarak oluştur",
-    "phpgsg.config.sortBy.description": "Getter ve Setter'ları özellik sırasına göre oluştur."
+    "phpgsg.config.autoGenerate.description": "Hızlı seçim penceresini atlayın ve mevcut tüm getter/setter metotlarını otomatik olarak oluşturun.",
+    "phpgsg.config.sortMethods.description": "Metotları düzenlerken getter veya setter'lara önceklik verebilir ya da karışık sıralayabilirsiniz.",
+    "phpgsg.config.orderBy.description": "Metotları sıralarken alfabetik sıralama ya da sınıfta belirlenen özellik sıralamasını tercih edebilirsiniz.",
+    "phpgsg.config.indentSize.description": "Bir girintinin boyutunu (boşluk sayısı olarak) belirler.",
+    "phpgsg.config.indentWithTab.description": "Girinti karakteri olarak boşluk yerine sekme karakterini kullanın. (indentSize seçeneği 1 olarak hesaplanır)",
+    "phpgsg.config.fluentInterface.description": "Setter metotlarında akıcı arayüz (metot zincirleme) için `return $this;` ifadesini ekler.",
+
+    "phpgsg.config.enum.property_order": "Özellik Sırası",
+    "phpgsg.config.enum.ascending": "Artan",
+    "phpgsg.config.enum.descending": "Azalan",
+    "phpgsg.config.enum.getters_setters": "Getter'lar + Setter'lar",
+    "phpgsg.config.enum.getters_first": "Önce Getter'lar",
+    "phpgsg.config.enum.setters_first": "Önce Setter'lar",
+
+    "phpgsg.errors.no_class_found": "Dosyada bir PHP sınıfı bulunamadı."
 }

@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Válassza ki a getterek/setterek generálásához szükséges tulajdonságokat",
+    "phpgsg.message.success": "A getterek és setterek sikeresen generálva lettek!",
+    "phpgsg.message.error": "Hiba a getterek és setterek generálásakor.",
+    "phpgsg.displayName": "PHP Getter és Setter Generátor",
+    "phpgsg.description": "PHP Getter és Setter Generátor",
+
+    "phpgsg.command.generate_getter": "Getterek generálása",
+    "phpgsg.command.generate_setter": "Setterek generálása",
+    "phpgsg.command.generate_getter_and_setter": "Getterek és Setterek generálása",
+
+    "phpgsg.config.title": "Getter Setter Generátor",
+    "phpgsg.config.autoGenerate.description": "Hagyja ki a gyorsválasztó ablakot, és automatikusan generálja az összes elérhető getter/setter metódust",
+    "phpgsg.config.sortMethods.description": "A metódusok rendezésekor előnyben részesítheti a gettereket vagy a settereket, vagy keverheti őket.",
+    "phpgsg.config.orderBy.description": "A metódusok rendezésekor választhat, hogy ábécé sorrendben vagy az osztályban megadott tulajdonságsorrend szerint rendezzen.",
+    "phpgsg.config.indentSize.description": "Meghatározza a behúzás méretét (szóközök számában).",
+    "phpgsg.config.indentWithTab.description": "Tabulátor karaktert használ szóköz helyett behúzási karakterként. (Az indentSize opció 1-ként van számolva)",
+    "phpgsg.config.fluentInterface.description": "Hozzáadja a `return $this;` utasítást a setter metódusokhoz a folyamatos interfész (metódusláncolás) érdekében.",
+
+    "phpgsg.config.enum.property_order": "Tulajdonságok sorrendje",
+    "phpgsg.config.enum.ascending": "Növekvő",
+    "phpgsg.config.enum.descending": "Csökkenő",
+    "phpgsg.config.enum.getters_setters": "Getterek + Setterek",
+    "phpgsg.config.enum.getters_first": "Először a getterek",
+    "phpgsg.config.enum.setters_first": "Először a setterek",
+
+    "phpgsg.errors.no_class_found": "A fájlban nem található PHP osztály."
+}

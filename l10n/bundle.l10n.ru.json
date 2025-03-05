@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Выберите свойства для генерации геттеров/сеттеров",
+    "phpgsg.message.success": "Геттеры и сеттеры успешно сгенерированы!",
+    "phpgsg.message.error": "Ошибка при генерации геттеров и сеттеров.",
+    "phpgsg.displayName": "Генератор геттеров и сеттеров PHP",
+    "phpgsg.description": "Генератор геттеров и сеттеров PHP",
+
+    "phpgsg.command.generate_getter": "Сгенерировать геттеры",
+    "phpgsg.command.generate_setter": "Сгенерировать сеттеры",
+    "phpgsg.command.generate_getter_and_setter": "Сгенерировать геттеры и сеттеры",
+
+    "phpgsg.config.title": "Генератор геттеров и сеттеров",
+    "phpgsg.config.autoGenerate.description": "Пропустить окно быстрого выбора и автоматически сгенерировать все доступные методы геттеров/сеттеров",
+    "phpgsg.config.sortMethods.description": "При организации методов вы можете расставить приоритеты для геттеров или сеттеров, или смешать их.",
+    "phpgsg.config.orderBy.description": "При сортировке методов вы можете выбрать сортировку по алфавиту или по порядку свойств, указанному в классе.",
+    "phpgsg.config.indentSize.description": "Определяет размер (в количестве пробелов) отступа.",
+    "phpgsg.config.indentWithTab.description": "Используйте символ табуляции вместо пробела в качестве символа отступа. (Опция indentSize рассчитывается как 1)",
+    "phpgsg.config.fluentInterface.description": "Добавляет `return $this;` в методы setter для текучего интерфейса (цепочка методов).",
+
+    "phpgsg.config.enum.property_order": "Порядок свойств",
+    "phpgsg.config.enum.ascending": "По возрастанию",
+    "phpgsg.config.enum.descending": "По убыванию",
+    "phpgsg.config.enum.getters_setters": "Геттеры + Сеттеры",
+    "phpgsg.config.enum.getters_first": "Сначала геттеры",
+    "phpgsg.config.enum.setters_first": "Сначала сеттеры",
+
+    "phpgsg.errors.no_class_found": "В файле не найден класс PHP."
+}

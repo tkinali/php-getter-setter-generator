@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Wählen Sie Eigenschaften zum Generieren von Gettern/Settern aus",
+    "phpgsg.message.success": "Getter und Setter erfolgreich generiert!",
+    "phpgsg.message.error": "Fehler beim Generieren von Gettern und Settern.",
+    "phpgsg.displayName": "PHP Getter und Setter Generator",
+    "phpgsg.description": "PHP Getter und Setter Generator",
+
+    "phpgsg.command.generate_getter": "Getter generieren",
+    "phpgsg.command.generate_setter": "Setter generieren",
+    "phpgsg.command.generate_getter_and_setter": "Getter und Setter generieren",
+
+    "phpgsg.config.title": "Getter Setter Generator",
+    "phpgsg.config.autoGenerate.description": "Überspringen Sie das Schnellwahlfenster und generieren Sie automatisch alle verfügbaren Getter-/Setter-Methoden",
+    "phpgsg.config.sortMethods.description": "Beim Organisieren von Methoden können Sie Getter oder Setter priorisieren oder sie mischen.",
+    "phpgsg.config.orderBy.description": "Beim Sortieren der Methoden können Sie wählen, ob alphabetisch oder nach der in der Klasse angegebenen Eigenschaftenreihenfolge sortiert werden soll.",
+    "phpgsg.config.indentSize.description": "Bestimmt die Größe (in Anzahl von Leerzeichen) eines Einzugs.",
+    "phpgsg.config.indentWithTab.description": "Verwenden Sie ein Tabulatorzeichen anstelle von Leerzeichen als Einzugszeichen. (Die Option indentSize wird als 1 berechnet)",
+    "phpgsg.config.fluentInterface.description": "Fügt `return $this;` zu Setter-Methoden für fließende Schnittstelle (Methodenverkettung) hinzu.",
+
+    "phpgsg.config.enum.property_order": "Eigenschaftenreihenfolge",
+    "phpgsg.config.enum.ascending": "Aufsteigend",
+    "phpgsg.config.enum.descending": "Absteigend",
+    "phpgsg.config.enum.getters_setters": "Getter + Setter",
+    "phpgsg.config.enum.getters_first": "Getter zuerst",
+    "phpgsg.config.enum.setters_first": "Setter zuerst",
+
+    "phpgsg.errors.no_class_found": "Im Datei wurde keine PHP-Klasse gefunden."
+}

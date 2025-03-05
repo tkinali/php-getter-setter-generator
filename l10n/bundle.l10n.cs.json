@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Vyberte vlastnosti pro generování getterů/setterů",
+    "phpgsg.message.success": "Gettery a settery byly úspěšně vygenerovány!",
+    "phpgsg.message.error": "Chyba při generování getterů a setterů.",
+    "phpgsg.displayName": "PHP Generátor getterů a setterů",
+    "phpgsg.description": "PHP Generátor getterů a setterů",
+
+    "phpgsg.command.generate_getter": "Generovat gettery",
+    "phpgsg.command.generate_setter": "Generovat settery",
+    "phpgsg.command.generate_getter_and_setter": "Generovat gettery a settery",
+
+    "phpgsg.config.title": "Generátor getterů a setterů",
+    "phpgsg.config.autoGenerate.description": "Přeskočte okno rychlého výběru a automaticky vygenerujte všechny dostupné metody getterů/setterů",
+    "phpgsg.config.sortMethods.description": "Při organizaci metod můžete upřednostnit gettery nebo settery, nebo je promíchat.",
+    "phpgsg.config.orderBy.description": "Při řazení metod můžete zvolit řazení abecedně nebo podle pořadí vlastností určeného ve třídě.",
+    "phpgsg.config.indentSize.description": "Určuje velikost (v počtu mezer) odsazení.",
+    "phpgsg.config.indentWithTab.description": "Použijte znak tabulátoru místo mezery jako znak odsazení. (Možnost indentSize se počítá jako 1)",
+    "phpgsg.config.fluentInterface.description": "Přidá `return $this;` k setter metodám pro plynulé rozhraní (řetězení metod).",
+
+    "phpgsg.config.enum.property_order": "Pořadí vlastností",
+    "phpgsg.config.enum.ascending": "Vzestupně",
+    "phpgsg.config.enum.descending": "Sestupně",
+    "phpgsg.config.enum.getters_setters": "Gettery + Settery",
+    "phpgsg.config.enum.getters_first": "Nejdříve gettery",
+    "phpgsg.config.enum.setters_first": "Nejdříve settery",
+
+    "phpgsg.errors.no_class_found": "V souboru nebyla nalezena PHP třída."
+}

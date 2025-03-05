@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "ゲッター/セッターを生成するプロパティを選択してください",
+    "phpgsg.message.success": "ゲッターとセッターが正常に生成されました！",
+    "phpgsg.message.error": "ゲッターとセッターの生成中にエラーが発生しました。",
+    "phpgsg.displayName": "PHPゲッターとセッターの生成",
+    "phpgsg.description": "PHPゲッターとセッターの生成",
+
+    "phpgsg.command.generate_getter": "ゲッターを生成",
+    "phpgsg.command.generate_setter": "セッターを生成",
+    "phpgsg.command.generate_getter_and_setter": "ゲッターとセッターを生成",
+
+    "phpgsg.config.title": "ゲッターセッター生成",
+    "phpgsg.config.autoGenerate.description": "クイック選択ウィンドウをスキップし、利用可能なすべてのゲッター/セッターメソッドを自動的に生成します",
+    "phpgsg.config.sortMethods.description": "メソッドを整理する際、ゲッターまたはセッターを優先するか、それらを混在させることができます。",
+    "phpgsg.config.orderBy.description": "メソッドをソートする際、アルファベット順またはクラスで指定されたプロパティの順序でソートするかを選択できます。",
+    "phpgsg.config.indentSize.description": "インデントのサイズ（スペースの数）を決定します。",
+    "phpgsg.config.indentWithTab.description": "インデント文字としてスペースの代わりにタブ文字を使用します。（indentSizeオプションは1として計算されます）",
+    "phpgsg.config.fluentInterface.description": "流暢なインターフェース（メソッドチェーン）のために、setterメソッドに`return $this;`を追加します。",
+
+    "phpgsg.config.enum.property_order": "プロパティの順序",
+    "phpgsg.config.enum.ascending": "昇順",
+    "phpgsg.config.enum.descending": "降順",
+    "phpgsg.config.enum.getters_setters": "ゲッター + セッター",
+    "phpgsg.config.enum.getters_first": "ゲッターが最初",
+    "phpgsg.config.enum.setters_first": "セッターが最初",
+
+    "phpgsg.errors.no_class_found": "ファイル内にPHPクラスが見つかりませんでした。"
+}

@@ -1,83 +1,60 @@
-[English](./README_EN.md)
+[Türkçe](./README_TR.md)
 
-# PHP Getter ve Setter Generator
+# PHP Getter and Setter Generator
 
-PHP sınıfları için getter ve setter metodlarını otomatik olarak oluşturan bir Visual Studio Code eklentisi.
+This VS Code extension is designed to accelerate the workflow of PHP developers. It automatically generates getter and setter methods for the private properties of classes in the currently open PHP file. Unlike other similar extensions, this extension supports files containing multiple classes and allows you to select properties separately for each class.
 
-## Özellikler
+## Features
 
-- PHP sınıf özellikleriniz için getter ve setter metodlarını tek tıkla oluşturma
-- Özelleştirilebilir getter ve setter şablonları
-- Nullable tip desteği
-- Method zincirlemesi için setter metodlarında fluent interface desteği
-- PHP 7+ tip tanımlamaları desteği
+- **One-Click Generation:** Generate getter and setter methods for your PHP class properties with a single click.
 
-## Kullanım
+![One-Click Generation](images/one-click.gif "One-Click Generation")
 
-1. PHP dosyanızı açın
-2. Sağ tıklayın ve "Getter ve Setter'ları Oluştur" seçeneğini seçin
-3. Getter ve setter'lar otomatik olarak oluşturulacaktır
+- **Multi-Class Support:** If there are multiple classes in the file, you can generate getter and setter methods separately for each.
 
-## Ayarlar
+![Multi-Class Support](images/multi-class.gif "Multi-Class Support")
 
-Bu eklenti aşağıdaki ayarları sunar:
+- **Customizable Selection:** Provides a user-friendly interface where you can select the private properties of each class separately.
 
-- `phpgsg.getterSetterGenerator.autoGenerate`: Sınıf özelliği eklendiğinde getter ve setter'ları otomatik oluşturur
-  - Varsayılan: `false`
+![Customizable Selection](images/property-select.gif "Customizable Selection")
 
-- `phpgsg.getterSetterGenerator.getterTemplate`: Getter metodu için şablon
-  - Varsayılan:
-    ```php
-    public function get{{name}}(): {{nullable}}{{type}}
-    {
-        return $this->{{variable}};
-    }
-    ```
+- **Method Insertion Order Selection:** Getter and setter methods can be inserted into the class in various orders: getters first, setters first, or alternating.
 
-- `phpgsg.getterSetterGenerator.setterTemplate`: Setter metodu için şablon
-  - Varsayılan:
-    ```php
-    public function set{{name}}({{nullable}}{{type}} ${{variable}}): self
-    {
-        $this->{{variable}} = ${{variable}};
-        return $this;
-    }
-    ```
-- `phpgsg.getterSetterGenerator.sortByPropertyOrder`: Getter ve Setter'ları property sırasına göre oluşturur
-  - Varsayılan: `true`
+![Method Insertion Order Selection](images/flexible-sort.gif "Method Insertion Order Selection")
 
-## Şablon Değişkenleri
+- **Flexible Sorting:** Generated getter/setter methods can be sorted alphabetically (A-Z or Z-A) or according to the order in which the properties are defined.
+- **Fluent Interface:** Fluent interface support for setter methods for method chaining.
+- **Modern PHP Support:** Support for PHP 7+ type declarations.
+- **Fast and Efficient:** Saves you time by speeding up your development process.
 
-Şablonlarda kullanabileceğiniz değişkenler:
+## Usage
 
-- `{{name}}`: Özellik adı (ilk harf büyük)
-- `{{type}}`: Özellik tipi
-- `{{nullable}}`: Nullable tip için ? işareti
-- `{{variable}}`: Özellik değişken adı
+1. Open your PHP file.
+2. Right-click or open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P).
+3. Select "Generate Getters and Setters".
+4. Getters and setters will be generated automatically.
 
-## Gereksinimler
+## Settings
 
-- Visual Studio Code 1.74.0 veya üzeri
-- PHP dosyaları
+This extension provides the following settings:
 
-## Kurulum
+- `phpgsg.getterSetterGenerator.autoGenerate`: Skips the quick selection window and automatically generates all available getter/setter methods.
+- `phpgsg.getterSetterGenerator.fluentInterface`: Adds `return $this;` for fluent interface (method chaining) in setter methods.
+- `phpgsg.getterSetterGenerator.indentSize`: Specifies the size of an indent (as a number of spaces).
+- `phpgsg.getterSetterGenerator.indentWithTab`: Uses tab character as the indent character instead of spaces. (indentSize option is calculated as 1)
+- `phpgsg.getterSetterGenerator.sortMethods`: You can prioritize getters or setters, or sort them mixed when arranging methods.
+- `phpgsg.getterSetterGenerator.orderBy`: You can choose alphabetical sorting or the property order defined in the class when sorting methods.
 
-1. VS Code'u açın
-2. Quick Open'ı açın (Ctrl+P)
-3. Şunu yazın: `ext install php-getter-and-setter-generator`
+## Installation
 
-## Lisans
+1. Open VS Code.
+2. Open Quick Open (Ctrl+P).
+3. Type: `ext install tkinali.php-getter-setter-generator`
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+## License
 
-## Katkıda Bulunma
+This project is licensed under the MIT license.
 
-1. Bu projeyi fork edin
-2. Feature branch'inizi oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Bir Pull Request oluşturun
+## Issue Reporting
 
-## Sorun Bildirme
-
-Bir hata bulduysanız veya öneriniz varsa, lütfen GitHub Issues üzerinden bildirin.
+If you find a bug or have a suggestion, please report it via GitHub Issues.

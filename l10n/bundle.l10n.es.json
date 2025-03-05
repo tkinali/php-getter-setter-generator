@@ -1,0 +1,28 @@
+{
+    "phpgsg.quickPick.placeholder": "Seleccione las propiedades para generar getters/setters",
+    "phpgsg.message.success": "¡Getters y setters generados con éxito!",
+    "phpgsg.message.error": "Error al generar getters y setters.",
+    "phpgsg.displayName": "Generador de Getters y Setters de PHP",
+    "phpgsg.description": "Generador de Getters y Setters de PHP",
+
+    "phpgsg.command.generate_getter": "Generar Getters",
+    "phpgsg.command.generate_setter": "Generar Setters",
+    "phpgsg.command.generate_getter_and_setter": "Generar Getters y Setters",
+
+    "phpgsg.config.title": "Generador de Getter Setter",
+    "phpgsg.config.autoGenerate.description": "Omita la ventana de selección rápida y genere automáticamente todos los métodos getter/setter disponibles",
+    "phpgsg.config.sortMethods.description": "Al organizar los métodos, puede priorizar getters o setters, o mezclarlos.",
+    "phpgsg.config.orderBy.description": "Al ordenar los métodos, puede elegir ordenar alfabéticamente o por el orden de propiedades especificado en la clase.",
+    "phpgsg.config.indentSize.description": "Determina el tamaño (en número de espacios) de una sangría.",
+    "phpgsg.config.indentWithTab.description": "Utilice el carácter de tabulación en lugar de espacio como carácter de sangría. (La opción indentSize se calcula como 1)",
+    "phpgsg.config.fluentInterface.description": "Agrega `return $this;` a los métodos setter para una interfaz fluida (encadenamiento de métodos).",
+
+    "phpgsg.config.enum.property_order": "Orden de propiedades",
+    "phpgsg.config.enum.ascending": "Ascendente",
+    "phpgsg.config.enum.descending": "Descendente",
+    "phpgsg.config.enum.getters_setters": "Getters + Setters",
+    "phpgsg.config.enum.getters_first": "Getters primero",
+    "phpgsg.config.enum.setters_first": "Setters primero",
+
+    "phpgsg.errors.no_class_found": "No se encontró una clase PHP en el archivo."
+}
