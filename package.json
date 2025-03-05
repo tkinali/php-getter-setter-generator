@@ -2,7 +2,7 @@
   "name": "php-getter-setter-generator",
   "displayName": "PHP Getter & Setter Generator",
   "description": "Generates getter and setter methods for PHP classes",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "tkinali",
   "author": "Tuncay KINALI <tkinali@gmail.com>",
   "license": "MIT",

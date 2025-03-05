@@ -56,8 +56,6 @@ export class Application {
             },
         });
 
-        const unparser = new PHPUnparser();
-
         this.ast = parser.parseCode(text, '');
         const namespace: any = this.ast.children.find((node: any) => node.kind === 'namespace');
         this.ast = namespace ?? this.ast;
@@ -103,7 +101,8 @@ export class Application {
             methods.forEach((method: any) => {
                 classMethods.set(method.name.name, method);
 
-                const methodProperty = method.name.name.toLowerCase().replace(/^(g|s)et/, '');
+                let methodProperty = method.name.name.replace(/^(g|s)et/, '');
+                methodProperty = methodProperty.charAt(0).toLowerCase() + methodProperty.slice(1)
 
                 if(classProperties.has(methodProperty)) {
                     const index = classNode.body.findIndex((m: any) => m.kind === "method" && m.name.name === method.name.name);
