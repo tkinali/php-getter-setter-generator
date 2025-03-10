@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "getter/setter를 생성할 속성을 선택하세요.",
+    "phpgsg.quickPick.constructor_placeholder": "생성자 인수를 생성할 속성을 선택하십시오",
     "phpgsg.message.success": "getter 및 setter가 성공적으로 생성되었습니다!",
     "phpgsg.message.error": "getter 및 setter 생성 중 오류가 발생했습니다.",
     "phpgsg.displayName": "PHP Getter 및 Setter 생성기",
     "phpgsg.description": "PHP Getter 및 Setter 생성기",
-
+    "phpgsg.command.generate_constructor": "Constructor 생성",
     "phpgsg.command.generate_getter": "Getter 생성",
     "phpgsg.command.generate_setter": "Setter 생성",
     "phpgsg.command.generate_getter_and_setter": "Getter 및 Setter 생성",
-
     "phpgsg.config.title": "Getter Setter 생성기",
     "phpgsg.config.autoGenerate.description": "빠른 선택 창을 건너뛰고 사용 가능한 모든 getter/setter 메서드를 자동으로 생성합니다.",
     "phpgsg.config.sortMethods.description": "메서드를 구성할 때 getter 또는 setter의 우선 순위를 지정하거나 혼합할 수 있습니다.",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "들여쓰기의 크기(공백 수)를 결정합니다.",
     "phpgsg.config.indentWithTab.description": "들여쓰기 문자로 공백 대신 탭 문자를 사용합니다. (indentSize 옵션은 1로 계산됩니다.)",
     "phpgsg.config.fluentInterface.description": "유창한 인터페이스(메서드 체이닝)를 위해 setter 메서드에 `return $this;`를 추가합니다.",
-
+    "phpgsg.config.contextMenu.title": "컨텍스트 메뉴 옵션",
+    "phpgsg.config.contextMenu.constructor.description": "컨텍스트 메뉴에 'Constructor 생성' 옵션 표시",
+    "phpgsg.config.contextMenu.getter.description": "컨텍스트 메뉴에 'Getter 생성' 옵션 표시",
+    "phpgsg.config.contextMenu.setter.description": "컨텍스트 메뉴에 'Setter 생성' 옵션 표시",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "컨텍스트 메뉴에 'Getter 및 Setter 생성' 옵션 표시",
     "phpgsg.config.enum.property_order": "속성 순서",
     "phpgsg.config.enum.ascending": "오름차순",
     "phpgsg.config.enum.descending": "내림차순",
     "phpgsg.config.enum.getters_setters": "Getter + Setter",
     "phpgsg.config.enum.getters_first": "Getter 먼저",
     "phpgsg.config.enum.setters_first": "Setter 먼저",
-
     "phpgsg.errors.no_class_found": "파일에서 PHP 클래스를 찾을 수 없습니다."
 }

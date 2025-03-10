@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "Wybierz właściwości do wygenerowania getterów/setterów",
+    "phpgsg.quickPick.constructor_placeholder": "Wybierz właściwości, aby wygenerować argumenty konstruktora",
     "phpgsg.message.success": "Gettery i settery zostały pomyślnie wygenerowane!",
     "phpgsg.message.error": "Błąd podczas generowania getterów i setterów.",
     "phpgsg.displayName": "Generator Getterów i Setterów PHP",
     "phpgsg.description": "Generator Getterów i Setterów PHP",
-
+    "phpgsg.command.generate_constructor": "Generuj Konstruktor",
     "phpgsg.command.generate_getter": "Generuj Gettery",
     "phpgsg.command.generate_setter": "Generuj Settery",
     "phpgsg.command.generate_getter_and_setter": "Generuj Gettery i Settery",
-
     "phpgsg.config.title": "Generator Getterów i Setterów",
     "phpgsg.config.autoGenerate.description": "Pomiń okno szybkiego wyboru i automatycznie wygeneruj wszystkie dostępne metody getterów/setterów",
     "phpgsg.config.sortMethods.description": "Podczas organizowania metod możesz nadać priorytet getterom lub setterom, albo je wymieszać.",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "Określa rozmiar (w liczbie spacji) wcięcia.",
     "phpgsg.config.indentWithTab.description": "Użyj znaku tabulacji zamiast spacji jako znaku wcięcia. (Opcja indentSize jest obliczana jako 1)",
     "phpgsg.config.fluentInterface.description": "Dodaje `return $this;` do metod ustawiających dla płynnego interfejsu (łańcuchowe wywoływanie metod).",
-
+    "phpgsg.config.contextMenu.title": "Opcje menu kontekstowego",
+    "phpgsg.config.contextMenu.constructor.description": "Pokaż opcję „Generuj Konstruktor” w menu kontekstowym.",
+    "phpgsg.config.contextMenu.getter.description": "Pokaż opcję „Generuj Gettery” w menu kontekstowym.",
+    "phpgsg.config.contextMenu.setter.description": "Pokaż opcję „Generuj Settery” w menu kontekstowym.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Pokaż opcję „Generuj Gettery i Settery” w menu kontekstowym.",
     "phpgsg.config.enum.property_order": "Kolejność właściwości",
     "phpgsg.config.enum.ascending": "Rosnąco",
     "phpgsg.config.enum.descending": "Malejąco",
     "phpgsg.config.enum.getters_setters": "Gettery + Settery",
     "phpgsg.config.enum.getters_first": "Najpierw gettery",
     "phpgsg.config.enum.setters_first": "Najpierw settery",
-
     "phpgsg.errors.no_class_found": "Nie znaleziono klasy PHP w pliku."
 }

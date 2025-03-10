@@ -2,7 +2,7 @@
 
 # PHP Getter 및 Setter 생성기
 
-이 VS Code 확장 프로그램은 PHP 개발자의 워크플로를 가속화하도록 설계되었습니다. 현재 열려 있는 PHP 파일의 클래스 개인 속성에 대한 getter 및 setter 메서드를 자동으로 생성합니다. 다른 유사한 확장 프로그램과 달리 이 확장 프로그램은 여러 클래스가 포함된 파일을 지원하며 각 클래스에 대해 속성을 개별적으로 선택할 수 있습니다.
+이 VS Code 확장 프로그램은 PHP 개발자의 워크플로를 가속화하도록 설계되었습니다. 현재 열려 있는 PHP 파일의 클래스 개인 속성에 대한 getter 및 setter 메서드와 생성자를 자동으로 생성합니다. 다른 유사한 확장 프로그램과 달리 이 확장 프로그램은 여러 클래스가 포함된 파일을 지원하며 각 클래스별로 속성을 개별적으로 선택할 수 있습니다.
 
 ## 기능
 
@@ -21,6 +21,10 @@
 - **메서드 삽입 순서 선택:** getter 및 setter 메서드를 클래스에 다양한 순서로 삽입할 수 있습니다: getter 먼저, setter 먼저 또는 번갈아 가며.
 
 ![메서드 삽입 순서 선택](images/flexible-sort.gif "메서드 삽입 순서 선택")
+
+- **생성자 생성:** 유형 힌트 및 속성 할당으로 생성자를 자동으로 생성합니다.
+
+![생성자 생성](images/constructor.gif "생성자 생성")
 
 - **유연한 정렬:** 생성된 getter/setter 메서드를 알파벳순(A-Z 또는 Z-A) 또는 속성이 정의된 순서대로 정렬할 수 있습니다.
 - **유창한 인터페이스:** 메서드 체이닝을 위한 setter 메서드의 유창한 인터페이스 지원.
@@ -44,6 +48,10 @@
 - `phpgsg.getterSetterGenerator.indentWithTab`: 공백 대신 탭 문자를 들여쓰기 문자로 사용합니다. (indentSize 옵션은 1로 계산됩니다.)
 - `phpgsg.getterSetterGenerator.sortMethods`: 메서드를 정렬할 때 getter 또는 setter의 우선 순위를 지정하거나 혼합하여 정렬할 수 있습니다.
 - `phpgsg.getterSetterGenerator.orderBy`: 메서드를 정렬할 때 알파벳순 정렬 또는 클래스에 정의된 속성 순서를 선택할 수 있습니다.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: 컨텍스트 메뉴에 "생성자 생성" 옵션을 표시하거나 숨깁니다.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: 컨텍스트 메뉴에 "게터 생성" 옵션을 표시하거나 숨깁니다.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: 컨텍스트 메뉴에 "세터 생성" 옵션을 표시하거나 숨깁니다.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: 컨텍스트 메뉴에 "게터 및 세터 생성" 옵션을 표시하거나 숨깁니다.
 
 ## 설치
 

@@ -1,10 +1,12 @@
 {
     "phpgsg.quickPick.placeholder": "ゲッター/セッターを生成するプロパティを選択してください",
+    "phpgsg.quickPick.constructor_placeholder": "コンストラクター引数を生成するプロパティを選択します",
     "phpgsg.message.success": "ゲッターとセッターが正常に生成されました！",
     "phpgsg.message.error": "ゲッターとセッターの生成中にエラーが発生しました。",
     "phpgsg.displayName": "PHPゲッターとセッターの生成",
     "phpgsg.description": "PHPゲッターとセッターの生成",
 
+    "phpgsg.command.generate_constructor": "コンストラクター を 生成 する",
     "phpgsg.command.generate_getter": "ゲッターを生成",
     "phpgsg.command.generate_setter": "セッターを生成",
     "phpgsg.command.generate_getter_and_setter": "ゲッターとセッターを生成",
@@ -16,6 +18,11 @@
     "phpgsg.config.indentSize.description": "インデントのサイズ（スペースの数）を決定します。",
     "phpgsg.config.indentWithTab.description": "インデント文字としてスペースの代わりにタブ文字を使用します。（indentSizeオプションは1として計算されます）",
     "phpgsg.config.fluentInterface.description": "流暢なインターフェース（メソッドチェーン）のために、setterメソッドに`return $this;`を追加します。",
+    "phpgsg.config.contextMenu.title": "コンテキストメニューオプション",
+    "phpgsg.config.contextMenu.constructor.description": "コンテキストメニューに「コンストラクターを生成」オプションを表示します。",
+    "phpgsg.config.contextMenu.getter.description": "コンテキストメニューに「ゲッターを生成」オプションを表示します。",
+    "phpgsg.config.contextMenu.setter.description": "コンテキストメニューに「セッターを生成」オプションを表示します。",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "コンテキストメニューに「ゲッターとセッターを生成」オプションを表示します。",
 
     "phpgsg.config.enum.property_order": "プロパティの順序",
     "phpgsg.config.enum.ascending": "昇順",

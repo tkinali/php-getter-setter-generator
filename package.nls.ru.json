@@ -1,10 +1,12 @@
 {
     "phpgsg.quickPick.placeholder": "Выберите свойства для генерации геттеров/сеттеров",
+    "phpgsg.quickPick.constructor_placeholder": "Выберите свойства для создания аргументов конструктора",
     "phpgsg.message.success": "Геттеры и сеттеры успешно сгенерированы!",
     "phpgsg.message.error": "Ошибка при генерации геттеров и сеттеров.",
     "phpgsg.displayName": "Генератор геттеров и сеттеров PHP",
     "phpgsg.description": "Генератор геттеров и сеттеров PHP",
 
+    "phpgsg.command.generate_constructor": "Сгенерировать Конструктор",
     "phpgsg.command.generate_getter": "Сгенерировать геттеры",
     "phpgsg.command.generate_setter": "Сгенерировать сеттеры",
     "phpgsg.command.generate_getter_and_setter": "Сгенерировать геттеры и сеттеры",
@@ -16,6 +18,11 @@
     "phpgsg.config.indentSize.description": "Определяет размер (в количестве пробелов) отступа.",
     "phpgsg.config.indentWithTab.description": "Используйте символ табуляции вместо пробела в качестве символа отступа. (Опция indentSize рассчитывается как 1)",
     "phpgsg.config.fluentInterface.description": "Добавляет `return $this;` в методы setter для текучего интерфейса (цепочка методов).",
+    "phpgsg.config.contextMenu.title": "Параметры контекстного меню",
+    "phpgsg.config.contextMenu.constructor.description": "Показать опцию «Создать Конструктор» в контекстном меню.",
+    "phpgsg.config.contextMenu.getter.description": "Показать опцию «Создать Геттеры» в контекстном меню.",
+    "phpgsg.config.contextMenu.setter.description": "Показать опцию «Создать Сеттеры» в контекстном меню.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Показать опцию «Создать Геттеры и Сеттеры» в контекстном меню.",
 
     "phpgsg.config.enum.property_order": "Порядок свойств",
     "phpgsg.config.enum.ascending": "По возрастанию",

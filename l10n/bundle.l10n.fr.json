@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "Sélectionnez les propriétés pour générer des getters/setters",
+    "phpgsg.quickPick.constructor_placeholder": "Sélectionnez les propriétés pour générer les arguments du constructeur",
     "phpgsg.message.success": "Getters et setters générés avec succès !",
     "phpgsg.message.error": "Erreur lors de la génération des getters et setters.",
     "phpgsg.displayName": "Générateur de Getters et Setters PHP",
     "phpgsg.description": "Générateur de Getters et Setters PHP",
-
+    "phpgsg.command.generate_constructor": "Générer le Constructeur",
     "phpgsg.command.generate_getter": "Générer les Getters",
     "phpgsg.command.generate_setter": "Générer les Setters",
     "phpgsg.command.generate_getter_and_setter": "Générer les Getters et Setters",
-
     "phpgsg.config.title": "Générateur de Getter Setter",
     "phpgsg.config.autoGenerate.description": "Ignorer la fenêtre de sélection rapide et générer automatiquement toutes les méthodes getter/setter disponibles",
     "phpgsg.config.sortMethods.description": "Lors de l'organisation des méthodes, vous pouvez prioriser les getters ou les setters, ou les mélanger.",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "Détermine la taille (en nombre d'espaces) d'un retrait.",
     "phpgsg.config.indentWithTab.description": "Utilisez le caractère de tabulation au lieu de l'espace comme caractère de retrait. (L'option indentSize est calculée comme 1)",
     "phpgsg.config.fluentInterface.description": "Ajoute `return $this;` aux méthodes setter pour une interface fluide (chaînage de méthodes).",
-
+    "phpgsg.config.contextMenu.title": "Options du menu contextuel",
+    "phpgsg.config.contextMenu.constructor.description": "Afficher l'option „Générer un Constructeur“ dans le menu contextuel.",
+    "phpgsg.config.contextMenu.getter.description": "Afficher l'option „Générer des Getters“ dans le menu contextuel.",
+    "phpgsg.config.contextMenu.setter.description": "Afficher l'option „Générer des Setters“ dans le menu contextuel.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Afficher l'option „Générer les Getters et Setters“ dans le menu contextuel.",
     "phpgsg.config.enum.property_order": "Ordre des propriétés",
     "phpgsg.config.enum.ascending": "Croissant",
     "phpgsg.config.enum.descending": "Décroissant",
     "phpgsg.config.enum.getters_setters": "Getters + Setters",
     "phpgsg.config.enum.getters_first": "Getters en premier",
     "phpgsg.config.enum.setters_first": "Setters en premier",
-
     "phpgsg.errors.no_class_found": "Aucune classe PHP n'a été trouvée dans le fichier."
 }

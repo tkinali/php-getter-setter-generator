@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "Vyberte vlastnosti pro generování getterů/setterů",
+    "phpgsg.quickPick.constructor_placeholder": "Vyberte vlastnosti pro generování argumentů konstruktoru",
     "phpgsg.message.success": "Gettery a settery byly úspěšně vygenerovány!",
     "phpgsg.message.error": "Chyba při generování getterů a setterů.",
     "phpgsg.displayName": "PHP Generátor getterů a setterů",
     "phpgsg.description": "PHP Generátor getterů a setterů",
-
-    "phpgsg.command.generate_getter": "Generovat gettery",
-    "phpgsg.command.generate_setter": "Generovat settery",
-    "phpgsg.command.generate_getter_and_setter": "Generovat gettery a settery",
-
+    "phpgsg.command.generate_constructor": "Generovat Konstruktor",
+    "phpgsg.command.generate_getter": "Generovat Gettery",
+    "phpgsg.command.generate_setter": "Generovat Settery",
+    "phpgsg.command.generate_getter_and_setter": "Generovat Gettery a Settery",
     "phpgsg.config.title": "Generátor getterů a setterů",
     "phpgsg.config.autoGenerate.description": "Přeskočte okno rychlého výběru a automaticky vygenerujte všechny dostupné metody getterů/setterů",
     "phpgsg.config.sortMethods.description": "Při organizaci metod můžete upřednostnit gettery nebo settery, nebo je promíchat.",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "Určuje velikost (v počtu mezer) odsazení.",
     "phpgsg.config.indentWithTab.description": "Použijte znak tabulátoru místo mezery jako znak odsazení. (Možnost indentSize se počítá jako 1)",
     "phpgsg.config.fluentInterface.description": "Přidá `return $this;` k setter metodám pro plynulé rozhraní (řetězení metod).",
-
+    "phpgsg.config.contextMenu.title": "Možnosti kontextového menu",
+    "phpgsg.config.contextMenu.constructor.description": "Zobrazit možnost „Generovat Konstruktor“ v kontextovém menu.",
+    "phpgsg.config.contextMenu.getter.description": "Zobrazit možnost „Generovat Gettery“ v kontextovém menu.",
+    "phpgsg.config.contextMenu.setter.description": "Zobrazit možnost „Generovat Settery“ v kontextovém menu.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Zobrazit možnost „Generovat Gettery a Settery“ v kontextovém menu.",
     "phpgsg.config.enum.property_order": "Pořadí vlastností",
     "phpgsg.config.enum.ascending": "Vzestupně",
     "phpgsg.config.enum.descending": "Sestupně",
     "phpgsg.config.enum.getters_setters": "Gettery + Settery",
     "phpgsg.config.enum.getters_first": "Nejdříve gettery",
     "phpgsg.config.enum.setters_first": "Nejdříve settery",
-
     "phpgsg.errors.no_class_found": "V souboru nebyla nalezena PHP třída."
 }

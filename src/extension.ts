@@ -3,6 +3,12 @@ import { Application } from './application';
 
 export function activate(context: vscode.ExtensionContext) {
 
+    const constructorCommand = vscode.commands.registerCommand('phpgsg.generateConstructor', () => {
+        const app = new Application(context);
+        app.generateConstructor();
+    });
+    context.subscriptions.push(constructorCommand);
+
     const getterCommand = vscode.commands.registerCommand('phpgsg.generateGetters', () => {
         const app = new Application(context);
         app.run(true, false);

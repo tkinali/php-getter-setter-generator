@@ -2,7 +2,7 @@
 
 # PHP GetterとSetterジェネレーター
 
-このVS Code拡張機能は、PHP開発者のワークフローを加速するように設計されています。現在開いているPHPファイルのクラスのプライベートプロパティに対して、getterとsetterメソッドを自動的に生成します。他の同様の拡張機能とは異なり、この拡張機能は複数のクラスを含むファイルをサポートし、各クラスごとにプロパティを個別に選択できます。
+このVS Code拡張機能は、PHP開発者のワークフローを加速するように設計されています。現在開いているPHPファイルのクラスのプライベートプロパティに対して、getterおよびsetterメソッドとコンストラクタを自動的に生成します。他の同様の拡張機能とは異なり、この拡張機能は複数のクラスを含むファイルをサポートし、各クラスごとにプロパティを個別に選択できます。
 
 ## 特徴
 
@@ -21,6 +21,10 @@
 - **メソッド挿入順序の選択:** getterとsetterメソッドは、クラスにさまざまな順序で挿入できます：最初にgetter、最初にsetter、または交互に。
 
 ![メソッド挿入順序の選択](images/flexible-sort.gif "メソッド挿入順序の選択")
+
+- **コンストラクター生成:** 型ヒントとプロパティ割り当てを使用してコンストラクターを自動的に生成します。
+
+![コンストラクター生成](images/constructor.gif "コンストラクター生成")
 
 - **柔軟なソート:** 生成されたgetter/setterメソッドは、アルファベット順（A-ZまたはZ-A）またはプロパティが定義されている順序でソートできます。
 - **Fluentインターフェース:** メソッドチェーンのためのsetterメソッドのFluentインターフェースのサポート。
@@ -44,6 +48,10 @@
 - `phpgsg.getterSetterGenerator.indentWithTab`: スペースの代わりにタブ文字をインデント文字として使用します。（indentSizeオプションは1として計算されます）
 - `phpgsg.getterSetterGenerator.sortMethods`: メソッドを配置するときに、getterまたはsetterを優先するか、混合してソートできます。
 - `phpgsg.getterSetterGenerator.orderBy`: メソッドをソートするときに、アルファベット順またはクラスで定義されたプロパティの順序を選択できます。
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: コンテキストメニューに「コンストラクターを生成」オプションを表示または非表示にします。
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: コンテキストメニューに「ゲッターを生成」オプションを表示または非表示にします。
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: コンテキストメニューに「セッターを生成」オプションを表示または非表示にします。
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: コンテキストメニューに「ゲッターとセッターを生成」オプションを表示または非表示にします。
 
 ## インストール
 

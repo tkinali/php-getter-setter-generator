@@ -1,8 +1,8 @@
 🇺🇸 [English](./README.md) - 🇧🇬 [Български](./README_BG.md) - 🇨🇿 [Čeština](./README_CS.md) - 🇩🇪 [Deutsch](./README_DE.md) - 🇪🇸 [Español](./README_ES.md) - 🇫🇷 [Français](./README_FR.md) - 🇭🇺 [Magyar](./README_HU.md) - 🇮🇹 [Italiano](./README_IT.md) - 🇯🇵 [日本語](./README_JA.md) - 🇰🇷 [한국어](./README_KO.md) - 🇵🇱 [Polski](./README_PL.md) - 🇧🇷 [Português - Brasil](./README_PT-BR.md) - 🇷🇺 [Русский](./README_RU.md) - 🇹🇷 [Türkçe](./README_TR.md) - 🇨🇳 [简体中文](./README_ZH-CN.md)/[繁體中文](./README_ZH-TW.md)
 
-# PHP Getter and Setter Generator
+# PHP Getter, Setter and Constructor Generator
 
-This VS Code extension is designed to accelerate the workflow of PHP developers. It automatically generates getter and setter methods for the private properties of classes in the currently open PHP file. Unlike other similar extensions, this extension supports files containing multiple classes and allows you to select properties separately for each class.
+This VS Code extension is designed to accelerate the workflow of PHP developers. It automatically generates getter and setter methods and constructors for the private properties of classes in the currently open PHP file. Unlike other similar extensions, this extension supports files containing multiple classes and allows you to select properties separately for each class.
 
 ## Features
 
@@ -21,6 +21,10 @@ This VS Code extension is designed to accelerate the workflow of PHP developers.
 - **Method Insertion Order Selection:** Getter and setter methods can be inserted into the class in various orders: getters first, setters first, or alternating.
 
 ![Method Insertion Order Selection](images/flexible-sort.gif "Method Insertion Order Selection")
+
+- **Constructor Generation:** Automatically generates constructors with type hinting and property assignment.
+
+![Constructor Generation](images/constructor.gif "Constructor Generation")
 
 - **Flexible Sorting:** Generated getter/setter methods can be sorted alphabetically (A-Z or Z-A) or according to the order in which the properties are defined.
 - **Fluent Interface:** Fluent interface support for setter methods for method chaining.
@@ -44,6 +48,10 @@ This extension provides the following settings:
 - `phpgsg.getterSetterGenerator.indentWithTab`: Uses tab character as the indent character instead of spaces. (indentSize option is calculated as 1)
 - `phpgsg.getterSetterGenerator.sortMethods`: You can prioritize getters or setters, or sort them mixed when arranging methods.
 - `phpgsg.getterSetterGenerator.orderBy`: You can choose alphabetical sorting or the property order defined in the class when sorting methods.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: Shows or hides the "Generate Constructor" option in the context menu.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: Shows or hides the "Generate Getters" option in the context menu.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: Shows or hides the "Generate Setters" option in the context menu.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: Shows or hides the "Generate Getters and Setters" option in the context menu.
 
 ## Installation
 

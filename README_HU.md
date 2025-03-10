@@ -2,7 +2,7 @@
 
 # PHP Getter és Setter Generátor
 
-Ez a VS Code kiterjesztés a PHP fejlesztők munkafolyamatának felgyorsítására lett tervezve. Automatikusan generál getter és setter metódusokat az osztályok privát tulajdonságaihoz a jelenleg megnyitott PHP fájlban. Más hasonló kiterjesztésektől eltérően ez a kiterjesztés támogatja a több osztályt tartalmazó fájlokat, és lehetővé teszi a tulajdonságok külön kiválasztását minden osztályhoz.
+Ez a VS Code kiterjesztés a PHP fejlesztők munkafolyamatának felgyorsítására lett tervezve. Automatikusan generál getter és setter metódusokat és konstruktorokat az aktuálisan megnyitott PHP fájl osztályainak privát tulajdonságaihoz. Más hasonló kiterjesztésektől eltérően, ez a kiterjesztés támogatja a több osztályt tartalmazó fájlokat, és lehetővé teszi, hogy az egyes osztályok tulajdonságait külön-külön válassza ki.
 
 ## Jellemzők
 
@@ -21,6 +21,10 @@ Ez a VS Code kiterjesztés a PHP fejlesztők munkafolyamatának felgyorsításá
 - **Metódus beszúrási sorrend kiválasztása:** A getter és setter metódusok különböző sorrendben szúrhatók be az osztályba: először getterek, először setterek vagy felváltva.
 
 ![Metódus beszúrási sorrend kiválasztása](images/flexible-sort.gif "Metódus beszúrási sorrend kiválasztása")
+
+- **Konstruktor generálás:** Automatikusan generál konstruktorokat típusjelzéssel és tulajdonságérték-adással.
+
+![Konstruktor generálás](images/constructor.gif "Konstruktor generálás")
 
 - **Rugalmas rendezés:** A generált getter/setter metódusok rendezhetők ábécé sorrendben (A-Z vagy Z-A) vagy a tulajdonságok definiálásának sorrendjében.
 - **Fluent interfész:** Fluent interfész támogatása a setter metódusokhoz a metódusláncoláshoz.
@@ -44,6 +48,10 @@ Ez a kiterjesztés a következő beállításokat kínálja:
 - `phpgsg.getterSetterGenerator.indentWithTab`: A szóközök helyett tabulátor karaktert használ behúzási karakterként. (az indentSize opció 1-ként van kiszámítva)
 - `phpgsg.getterSetterGenerator.sortMethods`: A metódusok rendezésekor prioritást adhat a gettereknek vagy settereknek, vagy vegyesen rendezheti őket.
 - `phpgsg.getterSetterGenerator.orderBy`: A metódusok rendezésekor választhat ábécé sorrendet vagy az osztályban definiált tulajdonságsorrendet.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: Megjeleníti vagy elrejti a "Konstruktor Generálása" opciót a helyi menüben.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: Megjeleníti vagy elrejti a "Getterek Generálása" opciót a helyi menüben.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: Megjeleníti vagy elrejti a "Setterek Generálása" opciót a helyi menüben.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: Megjeleníti vagy elrejti a "Getterek és Setterek Generálása" opciót a helyi menüben.
 
 ## Telepítés
 

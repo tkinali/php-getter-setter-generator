@@ -2,7 +2,7 @@
   "name": "php-getter-setter-generator",
   "displayName": "PHP Getter & Setter Generator",
   "description": "Generates getter and setter methods for PHP classes",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "publisher": "tkinali",
   "author": "Tuncay KINALI <tkinali@gmail.com>",
   "license": "MIT",
@@ -35,23 +35,32 @@
     "menus": {
       "editor/context": [
         {
-          "command": "phpgsg.generateGetters",
+          "command": "phpgsg.generateConstructor",
           "group": "1_phpgsg@1",
-          "when": "editorLangId == php"
+          "when": "editorLangId == php && config.phpgsg.getterSetterGenerator.contextMenu.constructor"
+        },
+        {
+          "command": "phpgsg.generateGetters",
+          "group": "1_phpgsg@2",
+          "when": "editorLangId == php && config.phpgsg.getterSetterGenerator.contextMenu.getter"
         },
         {
           "command": "phpgsg.generateSetters",
-          "group": "1_phpgsg@2",
-          "when": "editorLangId == php"
+          "group": "1_phpgsg@3",
+          "when": "editorLangId == php && config.phpgsg.getterSetterGenerator.contextMenu.setter"
         },
         {
           "command": "phpgsg.generateGettersAndSetters",
-          "group": "1_phpgsg@3",
-          "when": "editorLangId == php"
+          "group": "1_phpgsg@4",
+          "when": "editorLangId == php && config.phpgsg.getterSetterGenerator.contextMenu.getterAndSetter"
         }
       ]
     },
     "commands": [
+      {
+        "command": "phpgsg.generateConstructor",
+        "title": "%phpgsg.command.generate_constructor%"
+      },
       {
         "command": "phpgsg.generateGetters",
         "title": "%phpgsg.command.generate_getter%"
@@ -90,15 +99,43 @@
         },
         "phpgsg.getterSetterGenerator.sortMethods": {
           "type": "string",
-          "enum": ["%phpgsg.config.enum.getters_setters%", "%phpgsg.config.enum.getters_first%", "%phpgsg.config.enum.setters_first%"],
+          "enum": [
+            "%phpgsg.config.enum.getters_setters%",
+            "%phpgsg.config.enum.getters_first%",
+            "%phpgsg.config.enum.setters_first%"
+          ],
           "default": "%phpgsg.config.enum.getters_setters%",
           "description": "%phpgsg.config.sortMethods.description%"
         },
         "phpgsg.getterSetterGenerator.orderBy": {
           "type": "string",
-          "enum": ["%phpgsg.config.enum.property_order%", "%phpgsg.config.enum.ascending%", "%phpgsg.config.enum.descending%"],
+          "enum": [
+            "%phpgsg.config.enum.property_order%",
+            "%phpgsg.config.enum.ascending%",
+            "%phpgsg.config.enum.descending%"
+          ],
           "default": "%phpgsg.config.enum.property_order%",
           "description": "%phpgsg.config.orderBy.description%"
+        },
+        "phpgsg.getterSetterGenerator.contextMenu.constructor": {
+          "type": "boolean",
+          "default": true,
+          "description": "%phpgsg.config.contextMenu.constructor.description%"
+        },
+        "phpgsg.getterSetterGenerator.contextMenu.getter": {
+          "type": "boolean",
+          "default": true,
+          "description": "%phpgsg.config.contextMenu.getter.description%"
+        },
+        "phpgsg.getterSetterGenerator.contextMenu.setter": {
+          "type": "boolean",
+          "default": true,
+          "description": "%phpgsg.config.contextMenu.setter.description%"
+        },
+        "phpgsg.getterSetterGenerator.contextMenu.getterAndSetter": {
+          "type": "boolean",
+          "default": true,
+          "description": "%phpgsg.config.contextMenu.getterAndSetter.description%"
         }
       }
     }

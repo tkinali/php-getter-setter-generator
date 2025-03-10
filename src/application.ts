@@ -8,7 +8,8 @@ interface tQuickPickItem extends vscode.QuickPickItem {
     name?: string,
     variable?: string,
     getterExists?: boolean,
-    setterExists?: boolean
+    setterExists?: boolean,
+    constructorArgumentExists?: boolean
 }
 
 export class Application {
@@ -51,7 +52,7 @@ export class Application {
                 locations: false
             },
             ast: {
-                withPositions: true,
+                withPositions: false,
                 withSource: false,
             },
         });
@@ -60,42 +61,60 @@ export class Application {
         const namespace: any = this.ast.children.find((node: any) => node.kind === 'namespace');
         this.ast = namespace ?? this.ast;
 
+        const constructorTemplate = 'class x { public function __construct() {}}';
         const getterTemplate = 'class x { public function get{{name}}(): {{nullable}}{{type}} { return $this->{{variable}}; }}';
         const setterTemplate = 'class x { public function set{{name}}({{nullable}}{{type}}${{variable}}): self { $this->{{variable}} = ${{variable}};' + (this.config.get('fluentInterface', true) ? ' return $this;' : '') + '}}';
 
         const classNodes = this.ast.children.filter((node: any) => node.kind === 'class');
 
         classNodes.forEach((classNode: any) => {
-            let classProperties = new Map<string, any>();
-            let generatedGetters = new Map<string, any>();
-            let generatedSetters = new Map<string, any>();
+            const classProperties = new Map<string, any>();
+            const generatedGetters = new Map<string, any>();
+            const generatedSetters = new Map<string, any>();
 
             const properties = classNode.body.filter((node: any) => node.kind === 'propertystatement');
             properties.forEach((prop: any) => {
                 const property = prop.properties[0];
+                property.visibility = prop.visibility;
 
-                if('private' == prop.visibility) {
-                    classProperties.set(property.name.name, property);
-                    const funcName = property.name.name.charAt(0).toUpperCase() + property.name.name.slice(1);
+                classProperties.set(property.name.name, property);
+                const funcName = property.name.name.charAt(0).toUpperCase() + property.name.name.slice(1);
 
-                    const replacements = {
-                        'name': funcName,
-                        'variable': property.name.name,
-                        'type': property.type ? property.type.name : "",
-                        'nullable': property.nullable ? '?' : '',
-                    };
+                const replacements = {
+                    'name': funcName,
+                    'variable': property.name.name,
+                    'type': property.type ? property.type.name : "",
+                    'nullable': property.nullable ? '?' : '',
+                };
 
-                    const propertyGetterTemplate: string = this.replaceTemplate(getterTemplate, replacements);
-                    const getterMethod: any = parser.parseEval(propertyGetterTemplate);
-                    const propertySetterTemplate: string = this.replaceTemplate(setterTemplate, replacements);
-                    const setterMethod: any = parser.parseEval(propertySetterTemplate);
+                const propertyGetterTemplate: string = this.replaceTemplate(getterTemplate, replacements);
+                const getterMethod: any = parser.parseEval(propertyGetterTemplate);
+                const propertySetterTemplate: string = this.replaceTemplate(setterTemplate, replacements);
+                const setterMethod: any = parser.parseEval(propertySetterTemplate);
 
-                    generatedGetters.set('get' + funcName, getterMethod.children[0].body[0]);
-                    generatedSetters.set('set' + funcName, setterMethod.children[0].body[0]);
-                }
+                generatedGetters.set('get' + funcName, getterMethod.children[0].body[0]);
+                generatedSetters.set('set' + funcName, setterMethod.children[0].body[0]);
             });
 
             let classMethods = new Map<string, any>();
+
+            let constructorIndex = classNode.body.findIndex((m: any) => m.kind === "method" && m.name.name === '__construct');
+            const firstMethodIndex = classNode.body.findIndex((m: any) => m.kind === "method");
+            let constructorMethod: any;
+            if(-1 === constructorIndex) {
+                constructorMethod = parser.parseEval(constructorTemplate);
+                constructorMethod = constructorMethod.children[0].body[0];
+
+                if(-1 === firstMethodIndex) {
+                    classNode.body.push(constructorMethod);
+                    constructorIndex = classNode.body.size;
+                } else {
+                    classNode.body.splice(firstMethodIndex, 0, constructorMethod);
+                    constructorIndex = firstMethodIndex;
+                }
+            } else {
+                constructorMethod = classNode.body[constructorIndex];
+            }
 
             const methods = classNode.body.filter((node: any) => node.kind === 'method');
             methods.forEach((method: any) => {
@@ -113,6 +132,8 @@ export class Application {
             this.classes.set(classNode.name.name, new Map([
                 ['properties', classProperties],
                 ['methods', classMethods],
+                ['constructorMethod', constructorMethod],
+                ['constructorIndex', constructorIndex],
                 ['generatedGetters', generatedGetters],
                 ['generatedSetters', generatedSetters],
             ]));
@@ -183,7 +204,7 @@ export class Application {
         return ret;
     }
 
-    private prepareProperties(getter: boolean = true, setter: boolean = false): tQuickPickItem[]
+    private prepareProperties(getter: boolean = true, setter: boolean = false, constructor: boolean = false): tQuickPickItem[]
     {
         let quickPickItems: tQuickPickItem[] = [];
 
@@ -193,21 +214,33 @@ export class Application {
             const properties = classContent.get('properties');
 
             for(let [property, node] of properties) {
-                const propName = node.name.name.charAt(0).toUpperCase() + node.name.name.slice(1);
-                const getterExists = classContent.get('methods').has('get' + propName);
-                const setterExists = classContent.get('methods').has('set' + propName);
+                if(constructor ? true : 'private' == node.visibility) {
+                    const propName = node.name.name.charAt(0).toUpperCase() + node.name.name.slice(1);
+                    const getterExists = classContent.get('methods').has('get' + propName);
+                    const setterExists = classContent.get('methods').has('set' + propName);
+                    const constructorArgumentExists = classContent.get('constructorMethod').arguments.filter((item: any) => item.name.name === node.name.name).length > 0;
 
-                quickPickItems.push({
-                    label: `$${property}`,
-                    description: `${node.type?.name ?? ''}${node.nullable ? ' | null' : ''}`,
-                    picked: getter && setter ? (!getterExists && !setterExists) : (getter ? !getterExists : (setter ? !setterExists : false)),
-                    kind: vscode.QuickPickItemKind.Default,
-                    className: className,
-                    variable: property,
-                    name: propName,
-                    getterExists: getterExists,
-                    setterExists: setterExists
-                });
+                    const descriptions = [node.visibility];
+                    if(node.type?.name) {
+                        descriptions.push(node.type?.name);
+                    }
+                    if(node.nullable) {
+                        descriptions.push('null');
+                    }
+
+                    quickPickItems.push({
+                        label: `$${property}`,
+                        description: `${descriptions.join(' | ')}`,
+                        picked: constructor ? !constructorArgumentExists : (getter && setter ? (!getterExists && !setterExists) : (getter ? !getterExists : (setter ? !setterExists : false))),
+                        kind: vscode.QuickPickItemKind.Default,
+                        className: className,
+                        variable: property,
+                        name: propName,
+                        getterExists: getterExists,
+                        setterExists: setterExists,
+                        constructorArgumentExists: constructorArgumentExists
+                    });
+                }
             }
         }
 
@@ -245,7 +278,7 @@ export class Application {
     {
         this.classData();
 
-        if (!this.classes.size) {
+        if (this.classes.size === 0) {
             vscode.window.showErrorMessage(this.messages['phpgsg.errors.no_class_found']);
             return;
         }
@@ -296,13 +329,152 @@ export class Application {
             this.document.positionAt(0),
             this.document.positionAt(this.document.getText().length)
         );
-        edit.replace(this.document.uri, fullRange, '<?php\n' + unparser.ast2php(this.ast));
+        edit.replace(this.document.uri, fullRange, '<?php\n\n' + unparser.ast2php(this.ast));
 
         vscode.workspace.applyEdit(edit).then(success => {
             if (success) {
                 vscode.window.showInformationMessage(this.messages['phpgsg.message.success']);
             } else {
                 vscode.window.showErrorMessage(this.messages['phpgsg.message.error']);
+            }
+        });
+    }
+
+    public async generateConstructor()
+    {
+        this.classData();
+
+        if (this.classes.size === 0) {
+            vscode.window.showErrorMessage(this.messages['phpgsg.errors.no_class_found']);
+            return;
+        }
+
+        const quickPickItems = this.prepareProperties(false, false, true);
+        const selectedVars = await vscode.window.showQuickPick(quickPickItems,
+            {
+                placeHolder: this.messages['phpgsg.quickPick.constructor_placeholder'],
+                canPickMany: true
+            }
+        );
+
+        if(!selectedVars?.length) {
+            return;
+        }
+
+        for (let [className, classContent] of this.classes) {
+            const classNode = this.ast.children.find((node: any) => node.kind === 'class' && node.name.name === className);
+            const parameterNode = classContent.get('parameterNode');
+            let properties = classContent.get('properties');
+            let constructorMethod = classContent.get('constructorMethod');
+
+            const constructorMethodArguments = new Map<string, any>();
+            const constructorBody = new Map<string, any>();
+            constructorMethod.arguments.forEach((node: any) => {
+                constructorMethodArguments.set(node.name.name, node);
+            });
+            constructorMethod.arguments.splice(0, constructorMethod.arguments.length);
+
+            const children = constructorMethod.body.children;
+            let index = children.length -1;
+            while (index >= 0) {
+                let node = children[index];
+                if(node?.expression?.left?.what?.kind === 'variable' && node?.expression?.left?.what?.name === 'this' && properties.has(node.expression.left.offset.name)) {
+                    constructorBody.set(node.expression.left.offset.name, node);
+                    children.splice(index, 1);
+                }
+                index -= 1;
+            }
+
+            properties.forEach((prop: any) => {
+                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name);
+
+                if(constructorMethodArguments.has(prop.name.name)) {
+                    if(isSelected) {
+                        const parameterNode = {
+                            kind: 'parameter',
+                            attrGroups: [],
+                            byref: false,
+                            flags: 0,
+                            name: prop.name,
+                            nullable: prop.nullable,
+                            readonly: prop.readonly,
+                            type: prop.type,
+                            value: prop.value,
+                            variadic: false,
+                        };
+
+                        constructorMethod.arguments.push(parameterNode);
+                    } else {
+                        constructorMethod.arguments.push(constructorMethodArguments.get(prop.name.name));
+                    }
+                } else if(isSelected) {
+                    const parameterNode = {
+                        kind: 'parameter',
+                        attrGroups: [],
+                        byref: false,
+                        flags: 0,
+                        name: prop.name,
+                        nullable: prop.nullable,
+                        readonly: prop.readonly,
+                        type: prop.type,
+                        value: prop.value,
+                        variadic: false,
+                    };
+
+                    constructorMethod.arguments.push(parameterNode);
+                }
+            });
+
+            let reversedProperties = new Map(constructorMethod.arguments.reverse().map((obj: any) => [obj.name.name, obj]));
+
+            reversedProperties.forEach((prop: any) => {
+                const expressionstatement = {
+                    kind: 'expressionstatement',
+                    expression: {
+                        kind: 'assign',
+                        left: {
+                            kind: 'propertylookup',
+                            offset: {
+                                kind: 'identifier',
+                                name: prop.name.name
+                            },
+                            what: {
+                                kind: 'variable',
+                                curly: false,
+                                name: 'this'
+                            }
+                        },
+                        operator: '=',
+                        right: {
+                            kind: 'variable',
+                            curly: false,
+                            name: prop.name.name
+                        }
+                    }
+                };
+
+                constructorMethod.body.children.unshift(expressionstatement);
+            });
+
+            constructorMethod.arguments.reverse();
+        }
+
+        const edit = new vscode.WorkspaceEdit();
+        const unparser = new PHPUnparser({
+            indentSize: this.config.get('indentSize', 4),
+            indentWithTab: this.config.get('indentWithTab', false)
+        });
+        const fullRange = new vscode.Range(
+            this.document.positionAt(0),
+            this.document.positionAt(this.document.getText().length)
+        );
+        edit.replace(this.document.uri, fullRange, '<?php\n\n' + unparser.ast2php(this.ast));
+
+        vscode.workspace.applyEdit(edit).then(success => {
+            if (success) {
+                vscode.window.showInformationMessage(this.messages['phpgsg.message.constructor_success']);
+            } else {
+                vscode.window.showErrorMessage(this.messages['phpgsg.message.constructor_error']);
             }
         });
     }

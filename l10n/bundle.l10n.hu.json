@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "Válassza ki a getterek/setterek generálásához szükséges tulajdonságokat",
+    "phpgsg.quickPick.constructor_placeholder": "Válassza ki a tulajdonságokat a konstruktor argumentumainak generálásához",
     "phpgsg.message.success": "A getterek és setterek sikeresen generálva lettek!",
     "phpgsg.message.error": "Hiba a getterek és setterek generálásakor.",
     "phpgsg.displayName": "PHP Getter és Setter Generátor",
     "phpgsg.description": "PHP Getter és Setter Generátor",
-
-    "phpgsg.command.generate_getter": "Getterek generálása",
-    "phpgsg.command.generate_setter": "Setterek generálása",
-    "phpgsg.command.generate_getter_and_setter": "Getterek és Setterek generálása",
-
+    "phpgsg.command.generate_constructor": "Konstruktor Generálása",
+    "phpgsg.command.generate_getter": "Getterek Generálása",
+    "phpgsg.command.generate_setter": "Setterek Generálása",
+    "phpgsg.command.generate_getter_and_setter": "Getterek és Setterek Generálása",
     "phpgsg.config.title": "Getter Setter Generátor",
     "phpgsg.config.autoGenerate.description": "Hagyja ki a gyorsválasztó ablakot, és automatikusan generálja az összes elérhető getter/setter metódust",
     "phpgsg.config.sortMethods.description": "A metódusok rendezésekor előnyben részesítheti a gettereket vagy a settereket, vagy keverheti őket.",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "Meghatározza a behúzás méretét (szóközök számában).",
     "phpgsg.config.indentWithTab.description": "Tabulátor karaktert használ szóköz helyett behúzási karakterként. (Az indentSize opció 1-ként van számolva)",
     "phpgsg.config.fluentInterface.description": "Hozzáadja a `return $this;` utasítást a setter metódusokhoz a folyamatos interfész (metódusláncolás) érdekében.",
-
+    "phpgsg.config.contextMenu.title": "Helyi menü beállításai",
+    "phpgsg.config.contextMenu.constructor.description": "„Konstruktor Generálása“ opció megjelenítése a helyi menüben.",
+    "phpgsg.config.contextMenu.getter.description": "„Getterek Generálása“ opció megjelenítése a helyi menüben.",
+    "phpgsg.config.contextMenu.setter.description": "„Setterek Generálása“ opció megjelenítése a helyi menüben.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "„Getterek és Setterek Generálása“ opció megjelenítése a helyi menüben.",
     "phpgsg.config.enum.property_order": "Tulajdonságok sorrendje",
     "phpgsg.config.enum.ascending": "Növekvő",
     "phpgsg.config.enum.descending": "Csökkenő",
     "phpgsg.config.enum.getters_setters": "Getterek + Setterek",
     "phpgsg.config.enum.getters_first": "Először a getterek",
     "phpgsg.config.enum.setters_first": "Először a setterek",
-
     "phpgsg.errors.no_class_found": "A fájlban nem található PHP osztály."
 }

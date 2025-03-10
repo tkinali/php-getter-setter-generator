@@ -2,7 +2,7 @@
 
 # PHP Getter 和 Setter 生成器
 
-此 VS Code 扩展旨在加速 PHP 开发人员的工作流程。 它会自动为当前打开的 PHP 文件中的类的私有属性生成 getter 和 setter 方法。 与其他类似的扩展不同，此扩展支持包含多个类的文件，并允许您为每个类单独选择属性。
+此 VS Code 扩展旨在加速 PHP 开发人员的工作流程。 它会自动为当前打开的 PHP 文件中类的私有属性生成 getter 和 setter 方法以及构造函数。与其他类似的扩展不同，此扩展支持包含多个类的文件，并允许您为每个类单独选择属性。
 
 ## 特点
 
@@ -21,6 +21,10 @@
 - **方法插入顺序选择：** getter 和 setter 方法可以以不同的顺序插入到类中：getter 优先，setter 优先或交替。
 
 ![方法插入顺序选择](images/flexible-sort.gif "方法插入顺序选择")
+
+- **构造函数生成:** 自动生成带有类型提示和属性赋值的构造函数。
+
+![构造函数生成](images/constructor.gif "构造函数生成")
 
 - **灵活排序：** 生成的 getter/setter 方法可以按字母顺序（A-Z 或 Z-A）或按定义属性的顺序排序。
 - **流畅的接口：** 为 setter 方法提供流畅的接口支持，以实现方法链。
@@ -44,6 +48,10 @@
 - `phpgsg.getterSetterGenerator.indentWithTab`：使用制表符代替空格作为缩进字符。 （indentSize 选项计算为 1）
 - `phpgsg.getterSetterGenerator.sortMethods`：在排列方法时，您可以优先考虑 getter 或 setter，或者将它们混合排序。
 - `phpgsg.getterSetterGenerator.orderBy`：在对方法进行排序时，您可以选择字母排序或类中定义的属性顺序。
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: 在上下文菜单中显示或隐藏“生成构造函数”选项。
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: 在上下文菜单中显示或隐藏“生成 Getter”选项。
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: 在上下文菜单中显示或隐藏“生成 Setter”选项。
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: 在上下文菜单中显示或隐藏“生成 Getter 和 Setter”选项.
 
 ## 安装
 

@@ -2,7 +2,7 @@
 
 # Generátor Getterů a Setterů pro PHP
 
-Toto rozšíření pro VS Code je navrženo tak, aby urychlilo pracovní postup vývojářů PHP. Automaticky generuje metody getterů a setterů pro soukromé vlastnosti tříd v aktuálně otevřeném souboru PHP. Na rozdíl od jiných podobných rozšíření toto rozšíření podporuje soubory obsahující více tříd a umožňuje vám vybrat vlastnosti samostatně pro každou třídu.
+Toto rozšíření VS Code je navrženo tak, aby urychlilo pracovní postup PHP vývojářů. Automaticky generuje metody getter a setter a konstruktory pro soukromé vlastnosti tříd v aktuálně otevřeném souboru PHP. Na rozdíl od jiných podobných rozšíření toto rozšíření podporuje soubory obsahující více tříd a umožňuje vám vybírat vlastnosti samostatně pro každou třídu.
 
 ## Funkce
 
@@ -21,6 +21,10 @@ Toto rozšíření pro VS Code je navrženo tak, aby urychlilo pracovní postup 
 - **Výběr pořadí vkládání metod:** Metody getterů a setterů lze do třídy vkládat v různém pořadí: nejprve gettery, nejprve settery nebo střídavě.
 
 ![Výběr pořadí vkládání metod](images/flexible-sort.gif "Výběr pořadí vkládání metod")
+
+- **Generování konstruktoru:** Automaticky generuje konstruktory s typovým nápovědou a přiřazením vlastností.
+
+![Generování konstruktoru](images/constructor.gif "Generování konstruktoru")
 
 - **Flexibilní řazení:** Generované metody getterů/setterů lze řadit abecedně (A-Z nebo Z-A) nebo podle pořadí, v jakém jsou definovány vlastnosti.
 - **Fluent rozhraní:** Podpora fluent rozhraní pro metody setterů pro řetězení metod.
@@ -44,6 +48,10 @@ Toto rozšíření poskytuje následující nastavení:
 - `phpgsg.getterSetterGenerator.indentWithTab`: Používá znak tabulátoru jako znak odsazení namísto mezer. (možnost indentSize se počítá jako 1)
 - `phpgsg.getterSetterGenerator.sortMethods`: Při uspořádání metod můžete upřednostnit gettery nebo settery nebo je seřadit smíšeně.
 - `phpgsg.getterSetterGenerator.orderBy`: Při řazení metod můžete zvolit abecední řazení nebo pořadí vlastností definované ve třídě.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: Zobrazí nebo skryje možnost "Generovat Konstruktor" v kontextovém menu.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: Zobrazí nebo skryje možnost "Generovat Gettery" v kontextovém menu.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: Zobrazí nebo skryje možnost "Generovat Settery" v kontextovém menu.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: Zobrazí nebo skryje možnost "Generovat Gettery a Settery" v kontextovém menu.
 
 ## Instalace
 

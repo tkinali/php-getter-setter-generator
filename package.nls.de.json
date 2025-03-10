@@ -1,13 +1,15 @@
 {
     "phpgsg.quickPick.placeholder": "Wählen Sie Eigenschaften zum Generieren von Gettern/Settern aus",
+    "phpgsg.quickPick.constructor_placeholder": "Eigenschaften zur Generierung von Konstruktorargumenten auswählen",
     "phpgsg.message.success": "Getter und Setter erfolgreich generiert!",
     "phpgsg.message.error": "Fehler beim Generieren von Gettern und Settern.",
     "phpgsg.displayName": "PHP Getter und Setter Generator",
     "phpgsg.description": "PHP Getter und Setter Generator",
 
-    "phpgsg.command.generate_getter": "Getter generieren",
-    "phpgsg.command.generate_setter": "Setter generieren",
-    "phpgsg.command.generate_getter_and_setter": "Getter und Setter generieren",
+    "phpgsg.command.generate_constructor": "Konstruktor Generieren",
+    "phpgsg.command.generate_getter": "Getter Generieren",
+    "phpgsg.command.generate_setter": "Setter Generieren",
+    "phpgsg.command.generate_getter_and_setter": "Getter und Setter Generieren",
 
     "phpgsg.config.title": "Getter Setter Generator",
     "phpgsg.config.autoGenerate.description": "Überspringen Sie das Schnellwahlfenster und generieren Sie automatisch alle verfügbaren Getter-/Setter-Methoden",
@@ -16,6 +18,11 @@
     "phpgsg.config.indentSize.description": "Bestimmt die Größe (in Anzahl von Leerzeichen) eines Einzugs.",
     "phpgsg.config.indentWithTab.description": "Verwenden Sie ein Tabulatorzeichen anstelle von Leerzeichen als Einzugszeichen. (Die Option indentSize wird als 1 berechnet)",
     "phpgsg.config.fluentInterface.description": "Fügt `return $this;` zu Setter-Methoden für fließende Schnittstelle (Methodenverkettung) hinzu.",
+    "phpgsg.config.contextMenu.title": "Kontextmenüoptionen",
+    "phpgsg.config.contextMenu.constructor.description": "Option „Konstruktor Generieren“ im Kontextmenü anzeigen.",
+    "phpgsg.config.contextMenu.getter.description": "Option „Getter Generieren“ im Kontextmenü anzeigen.",
+    "phpgsg.config.contextMenu.setter.description": "Option „Setter Generieren“ im Kontextmenü anzeigen.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Option „Getter und Setter Generieren“ im Kontextmenü anzeigen.",
 
     "phpgsg.config.enum.property_order": "Eigenschaftenreihenfolge",
     "phpgsg.config.enum.ascending": "Aufsteigend",

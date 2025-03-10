@@ -1,10 +1,12 @@
 {
     "phpgsg.quickPick.placeholder": "Selecione as propriedades para gerar getters/setters",
+    "phpgsg.quickPick.constructor_placeholder": "Selecione as propriedades para gerar argumentos do construtor",
     "phpgsg.message.success": "Getters e setters gerados com sucesso!",
     "phpgsg.message.error": "Erro ao gerar getters e setters.",
     "phpgsg.displayName": "Gerador de Getters e Setters PHP",
     "phpgsg.description": "Gerador de Getters e Setters PHP",
 
+    "phpgsg.command.generate_constructor": "Gerar Construtor",
     "phpgsg.command.generate_getter": "Gerar Getters",
     "phpgsg.command.generate_setter": "Gerar Setters",
     "phpgsg.command.generate_getter_and_setter": "Gerar Getters e Setters",
@@ -16,6 +18,11 @@
     "phpgsg.config.indentSize.description": "Determina o tamanho (em número de espaços) de um recuo.",
     "phpgsg.config.indentWithTab.description": "Use o caractere de tabulação em vez de espaço como caractere de recuo. (A opção indentSize é calculada como 1)",
     "phpgsg.config.fluentInterface.description": "Adiciona `return $this;` aos métodos setter para interface fluente (encadeamento de métodos).",
+    "phpgsg.config.contextMenu.title": "Opções do menu de contexto",
+    "phpgsg.config.contextMenu.constructor.description": "Mostrar a opção `Gerar Construtor` no menu de contexto.",
+    "phpgsg.config.contextMenu.getter.description": "Mostrar a opção `Gerar Getters` no menu de contexto.",
+    "phpgsg.config.contextMenu.setter.description": "Mostrar a opção `Gerar Setters` no menu de contexto.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Mostrar a opção `Gerar Getters e Setters` no menu de contexto.",
 
     "phpgsg.config.enum.property_order": "Ordem das propriedades",
     "phpgsg.config.enum.ascending": "Ascendente",

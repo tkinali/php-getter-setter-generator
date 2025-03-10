@@ -1,10 +1,12 @@
 {
     "phpgsg.quickPick.placeholder": "Seleziona le proprietà per generare getters/setters",
+    "phpgsg.quickPick.constructor_placeholder": "Seleziona le proprietà per generare gli argomenti del costruttore",
     "phpgsg.message.success": "Getters e setters generati con successo!",
     "phpgsg.message.error": "Errore durante la generazione di getters e setters.",
     "phpgsg.displayName": "Generatore di Getters e Setters PHP",
     "phpgsg.description": "Generatore di Getters e Setters PHP",
 
+    "phpgsg.command.generate_constructor": "Genera Costruttore",
     "phpgsg.command.generate_getter": "Genera Getters",
     "phpgsg.command.generate_setter": "Genera Setters",
     "phpgsg.command.generate_getter_and_setter": "Genera Getters e Setters",
@@ -16,6 +18,11 @@
     "phpgsg.config.indentSize.description": "Determina la dimensione (in numero di spazi) di un'indentazione.",
     "phpgsg.config.indentWithTab.description": "Utilizza il carattere di tabulazione invece dello spazio come carattere di indentazione. (L'opzione indentSize è calcolata come 1)",
     "phpgsg.config.fluentInterface.description": "Aggiunge `return $this;` ai metodi setter per un'interfaccia fluida (concatenazione di metodi).",
+    "phpgsg.config.contextMenu.title": "Opzioni del menu contestuale",
+    "phpgsg.config.contextMenu.constructor.description": "Mostra l'opzione „Genera Costruttore“ nel menu contestuale.",
+    "phpgsg.config.contextMenu.getter.description": "Mostra l'opzione „Genera Getters“ nel menu contestuale.",
+    "phpgsg.config.contextMenu.setter.description": "Mostra l'opzione „Genera Setters“ nel menu contestuale.",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "Mostra l'opzione „Genera Getters e Setters“ nel menu contestuale.",
 
     "phpgsg.config.enum.property_order": "Ordine delle proprietà",
     "phpgsg.config.enum.ascending": "Crescente",

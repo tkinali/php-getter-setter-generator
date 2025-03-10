@@ -2,7 +2,7 @@
 
 # PHP Getter ve Setter Generator
 
-Bu VS Code eklentisi, PHP geliştiricilerinin iş akışını hızlandırmak için tasarlanmıştır. Açık olan PHP dosyasındaki sınıfların özel (private) özelliklerine yönelik getter ve setter metotlarını otomatik olarak oluşturur. Diğer benzer eklentilerden farklı olarak, bu eklenti birden fazla sınıf içeren dosyaları destekler ve her sınıf için ayrı ayrı özellik seçimi yapmanıza olanak tanır.
+Bu VS Code eklentisi, PHP geliştiricilerinin iş akışını hızlandırmak için tasarlanmıştır. Açık olan PHP dosyasındaki sınıfların private özellikleri için otomatik olarak getter ve setter metotları ve constructor'lar oluşturur. Diğer benzer eklentilerden farklı olarak, bu eklenti birden fazla sınıf içeren dosyaları destekler ve her sınıf için özellikleri ayrı ayrı seçmenize olanak tanır.
 
 ## Özellikler
 
@@ -21,6 +21,10 @@ Bu VS Code eklentisi, PHP geliştiricilerinin iş akışını hızlandırmak iç
 - **Metot Ekleme Şekli Seçimi:** Getter ve setter metotları, sınıfa getter'lar önce, setter'lar sonra, setter'lar önce, getter'lar sonra veya bir getter bir setter şeklinde eklenebilir.
 
 ![Metot Ekleme Şekli Seçimi](images/flexible-sort.gif "Metot Ekleme Şekli Seçimi")
+
+- **Constructor Oluşturma:** Tür ipuçları ve özellik ataması ile otomatik olarak constructor oluşturur.
+
+![Constructor Oluşturma](images/constructor.gif "Constructor Oluşturma")
 
 - **Esnek Sıralama:** Oluşturulan getter/setter metotları, alfabetik (A-Z veya Z-A) veya özelliklerin tanımlanma sırasına göre sıralanabilir.
 - **Akıcı Arayüz:** Method zincirlemesi için setter metodlarında fluent interface desteği.
@@ -44,6 +48,10 @@ Bu eklenti aşağıdaki ayarları sunar:
 - `phpgsg.getterSetterGenerator.indentWithTab`: Girinti karakteri olarak boşluk yerine sekme karakterini kullanır. (indentSize seçeneği 1 olarak hesaplanır)
 - `phpgsg.getterSetterGenerator.sortMethods`: Metotları düzenlerken getter veya setter'lara önceklik verebilir ya da karışık sıralayabilirsiniz.
 - `phpgsg.getterSetterGenerator.orderBy`: Metotları sıralarken alfabetik sıralama ya da sınıfta belirlenen özellik sıralamasını tercih edebilirsiniz.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: Sağ tık menüsünde "Constructor Oluştur" seçeneğini gösterir veya gizler.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: Sağ tık menüsünde "Getter'ları Oluştur" seçeneğini gösterir veya gizler.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: Sağ tık menüsünde "Setter'ları Oluştur" seçeneğini gösterir veya gizler.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: Sağ tık menüsünde "Getter'ları ve Setter'ları Oluştur" seçeneğini gösterir veya gizler.
 
 ## Kurulum
 

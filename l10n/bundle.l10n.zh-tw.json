@@ -1,14 +1,14 @@
 {
     "phpgsg.quickPick.placeholder": "選擇要產生 getter/setter 的屬性",
+    "phpgsg.quickPick.constructor_placeholder": "選擇屬性以產生建構函式引數",
     "phpgsg.message.success": "Getter 和 setter 產生成功！",
     "phpgsg.message.error": "產生 getter 和 setter 時發生錯誤。",
     "phpgsg.displayName": "PHP Getter 和 Setter 產生器",
     "phpgsg.description": "PHP Getter 和 Setter 產生器",
-
+    "phpgsg.command.generate_constructor": "產生 Constructor",
     "phpgsg.command.generate_getter": "產生 Getter",
     "phpgsg.command.generate_setter": "產生 Setter",
     "phpgsg.command.generate_getter_and_setter": "產生 Getter 和 Setter",
-
     "phpgsg.config.title": "Getter Setter 產生器",
     "phpgsg.config.autoGenerate.description": "跳過快速選擇視窗並自動產生所有可用的 getter/setter 方法",
     "phpgsg.config.sortMethods.description": "在組織方法時，您可以優先考慮 getter 或 setter，或者將它們混合在一起。",
@@ -16,13 +16,16 @@
     "phpgsg.config.indentSize.description": "確定縮排的大小（以空格數為單位）。",
     "phpgsg.config.indentWithTab.description": "使用製表符代替空格作為縮排字元。（indentSize 選項計算為 1）",
     "phpgsg.config.fluentInterface.description": "為流暢介面（方法鏈）在設定器方法中新增`return $this;`。",
-
+    "phpgsg.config.contextMenu.title": "上下文選單選項",
+    "phpgsg.config.contextMenu.constructor.description": "在上下文選單中顯示「產生建構子」選項。",
+    "phpgsg.config.contextMenu.getter.description": "在上下文選單中顯示「產生 Getter」選項。",
+    "phpgsg.config.contextMenu.setter.description": "在上下文選單中顯示「產生 Setter」選項。",
+    "phpgsg.config.contextMenu.getterAndSetter.description": "在上下文選單中顯示「產生 Getter 和 Setter」選項。",
     "phpgsg.config.enum.property_order": "屬性順序",
     "phpgsg.config.enum.ascending": "遞增",
     "phpgsg.config.enum.descending": "遞減",
     "phpgsg.config.enum.getters_setters": "Getter + Setter",
     "phpgsg.config.enum.getters_first": "Getter 優先",
     "phpgsg.config.enum.setters_first": "Setter 優先",
-
     "phpgsg.errors.no_class_found": "檔案中未找到 PHP 類別。"
 }

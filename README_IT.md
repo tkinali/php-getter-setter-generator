@@ -2,7 +2,7 @@
 
 # Generatore di Getter e Setter PHP
 
-Questa estensione VS Code è progettata per accelerare il flusso di lavoro degli sviluppatori PHP. Genera automaticamente metodi getter e setter per le proprietà private delle classi nel file PHP attualmente aperto. A differenza di altre estensioni simili, questa estensione supporta file contenenti più classi e consente di selezionare le proprietà separatamente per ciascuna classe.
+Questa estensione di VS Code è progettata per accelerare il flusso di lavoro degli sviluppatori PHP. Genera automaticamente metodi getter e setter e costruttori per le proprietà private delle classi nel file PHP attualmente aperto. A differenza di altre estensioni simili, questa estensione supporta file contenenti più classi e consente di selezionare le proprietà separatamente per ciascuna classe.
 
 ## Caratteristiche
 
@@ -21,6 +21,10 @@ Questa estensione VS Code è progettata per accelerare il flusso di lavoro degli
 - **Selezione dell'ordine di inserimento dei metodi:** I metodi getter e setter possono essere inseriti nella classe in vari ordini: prima i getter, prima i setter o alternati.
 
 ![Selezione dell'ordine di inserimento dei metodi](images/flexible-sort.gif "Selezione dell'ordine di inserimento dei metodi")
+
+- **Generazione del costruttore:** Genera automaticamente costruttori con suggerimenti di tipo e assegnazione di proprietà.
+
+![Generazione del costruttore](images/constructor.gif "Generazione del costruttore")
 
 - **Ordinamento flessibile:** I metodi getter/setter generati possono essere ordinati alfabeticamente (A-Z o Z-A) o in base all'ordine in cui sono definite le proprietà.
 - **Interfaccia fluida:** Supporto dell'interfaccia fluida per i metodi setter per il concatenamento dei metodi.
@@ -44,6 +48,10 @@ Questa estensione fornisce le seguenti impostazioni:
 - `phpgsg.getterSetterGenerator.indentWithTab`: Utilizza il carattere di tabulazione come carattere di rientro invece degli spazi. (l'opzione indentSize viene calcolata come 1)
 - `phpgsg.getterSetterGenerator.sortMethods`: Puoi dare la priorità ai getter o ai setter, oppure ordinarli in modo misto quando organizzi i metodi.
 - `phpgsg.getterSetterGenerator.orderBy`: Puoi scegliere l'ordinamento alfabetico o l'ordine delle proprietà definito nella classe quando ordini i metodi.
+- `phpgsg.getterSetterGenerator.contextMenu.constructor`: Mostra o nasconde l'opzione "Genera Costruttore" nel menu contestuale.
+- `phpgsg.getterSetterGenerator.contextMenu.getter`: Mostra o nasconde l'opzione "Genera Getter" nel menu contestuale.
+- `phpgsg.getterSetterGenerator.contextMenu.setter`: Mostra o nasconde l'opzione "Genera Setter" nel menu contestuale.
+- `phpgsg.getterSetterGenerator.contextMenu.getterAndSetter`: Mostra o nasconde l'opzione "Genera Getter e Setter" nel menu contestuale.
 
 ## Installazione
 
