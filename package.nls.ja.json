@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "コンストラクター引数を生成するプロパティを選択します",
     "phpgsg.message.success": "ゲッターとセッターが正常に生成されました！",
     "phpgsg.message.error": "ゲッターとセッターの生成中にエラーが発生しました。",
+    "phpgsg.message.constructor_success": "コンストラクターが正常に生成されました！",
+    "phpgsg.message.constructor_error": "コンストラクターの生成中にエラーが発生しました。",
     "phpgsg.displayName": "PHPゲッターとセッターの生成",
     "phpgsg.description": "PHPゲッターとセッターの生成",
 

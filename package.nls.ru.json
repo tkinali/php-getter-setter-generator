@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "Выберите свойства для создания аргументов конструктора",
     "phpgsg.message.success": "Геттеры и сеттеры успешно сгенерированы!",
     "phpgsg.message.error": "Ошибка при генерации геттеров и сеттеров.",
+    "phpgsg.message.constructor_success": "Конструктор успешно сгенерирован!",
+    "phpgsg.message.constructor_error": "Ошибка при генерации конструктора.",
     "phpgsg.displayName": "Генератор геттеров и сеттеров PHP",
     "phpgsg.description": "Генератор геттеров и сеттеров PHP",
 

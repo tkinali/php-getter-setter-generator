@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "Wybierz właściwości, aby wygenerować argumenty konstruktora",
     "phpgsg.message.success": "Gettery i settery zostały pomyślnie wygenerowane!",
     "phpgsg.message.error": "Błąd podczas generowania getterów i setterów.",
+    "phpgsg.message.constructor_success": "Konstruktor wygenerowany pomyślnie!",
+    "phpgsg.message.constructor_error": "Błąd podczas generowania konstruktora.",
     "phpgsg.displayName": "Generator Getterów i Setterów PHP",
     "phpgsg.description": "Generator Getterów i Setterów PHP",
     "phpgsg.command.generate_constructor": "Generuj Konstruktor",

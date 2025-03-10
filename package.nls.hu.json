@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "Válassza ki a tulajdonságokat a konstruktor argumentumainak generálásához",
     "phpgsg.message.success": "A getterek és setterek sikeresen generálva lettek!",
     "phpgsg.message.error": "Hiba a getterek és setterek generálásakor.",
+    "phpgsg.message.constructor_success": "A konstruktor sikeresen generálva!",
+    "phpgsg.message.constructor_error": "Hiba a konstruktor generálásakor.",
     "phpgsg.displayName": "PHP Getter és Setter Generátor",
     "phpgsg.description": "PHP Getter és Setter Generátor",
 

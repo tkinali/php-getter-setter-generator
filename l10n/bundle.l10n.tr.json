@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "Constructor argümanlarını oluşturmak için özellikleri seçin",
     "phpgsg.message.success": "Getter ve setter'lar başarıyla oluşturuldu!",
     "phpgsg.message.error": "Getter ve setter'lar oluşturulurken hata oluştu.",
+    "phpgsg.message.constructor_success": "Constructor başarıyla oluşturuldu!",
+    "phpgsg.message.constructor_error": "Constructor oluşturulurken hata oluştu.",
     "phpgsg.displayName": "PHP Getter ve Setter Oluşturucu",
     "phpgsg.description": "PHP Getter ve Setter Oluşturucu",
     "phpgsg.command.generate_constructor": "Constructor Oluştur",

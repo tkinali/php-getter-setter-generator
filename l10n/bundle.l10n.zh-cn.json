@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "选择属性以生成构造函数参数",
     "phpgsg.message.success": "Getter 和 setter 生成成功！",
     "phpgsg.message.error": "生成 getter 和 setter 时出错。",
+    "phpgsg.message.constructor_success": "构造函数生成成功！",
+    "phpgsg.message.constructor_error": "生成构造函数时出错。",
     "phpgsg.displayName": "PHP Getter 和 Setter 生成器",
     "phpgsg.description": "PHP Getter 和 Setter 生成器",
     "phpgsg.command.generate_constructor": "生成 Constructor",

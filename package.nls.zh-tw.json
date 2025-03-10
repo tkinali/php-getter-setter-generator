@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "選擇屬性以產生建構函式引數",
     "phpgsg.message.success": "Getter 和 setter 產生成功！",
     "phpgsg.message.error": "產生 getter 和 setter 時發生錯誤。",
+    "phpgsg.message.constructor_success": "建構子產生成功！",
+    "phpgsg.message.constructor_error": "產生建構子時發生錯誤。",
     "phpgsg.displayName": "PHP Getter 和 Setter 產生器",
     "phpgsg.description": "PHP Getter 和 Setter 產生器",
 

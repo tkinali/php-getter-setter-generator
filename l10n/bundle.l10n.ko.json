@@ -3,6 +3,8 @@
     "phpgsg.quickPick.constructor_placeholder": "생성자 인수를 생성할 속성을 선택하십시오",
     "phpgsg.message.success": "getter 및 setter가 성공적으로 생성되었습니다!",
     "phpgsg.message.error": "getter 및 setter 생성 중 오류가 발생했습니다.",
+    "phpgsg.message.constructor_success": "생성자가 성공적으로 생성되었습니다!",
+    "phpgsg.message.constructor_error": "생성자 생성 중 오류가 발생했습니다.",
     "phpgsg.displayName": "PHP Getter 및 Setter 생성기",
     "phpgsg.description": "PHP Getter 및 Setter 생성기",
     "phpgsg.command.generate_constructor": "Constructor 생성",

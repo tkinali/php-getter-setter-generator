@@ -99,19 +99,10 @@ export class Application {
             let classMethods = new Map<string, any>();
 
             let constructorIndex = classNode.body.findIndex((m: any) => m.kind === "method" && m.name.name === '__construct');
-            const firstMethodIndex = classNode.body.findIndex((m: any) => m.kind === "method");
             let constructorMethod: any;
             if(-1 === constructorIndex) {
                 constructorMethod = parser.parseEval(constructorTemplate);
                 constructorMethod = constructorMethod.children[0].body[0];
-
-                if(-1 === firstMethodIndex) {
-                    classNode.body.push(constructorMethod);
-                    constructorIndex = classNode.body.size;
-                } else {
-                    classNode.body.splice(firstMethodIndex, 0, constructorMethod);
-                    constructorIndex = firstMethodIndex;
-                }
             } else {
                 constructorMethod = classNode.body[constructorIndex];
             }
@@ -121,7 +112,7 @@ export class Application {
                 classMethods.set(method.name.name, method);
 
                 let methodProperty = method.name.name.replace(/^(g|s)et/, '');
-                methodProperty = methodProperty.charAt(0).toLowerCase() + methodProperty.slice(1)
+                methodProperty = methodProperty.charAt(0).toLowerCase() + methodProperty.slice(1);
 
                 if(classProperties.has(methodProperty)) {
                     const index = classNode.body.findIndex((m: any) => m.kind === "method" && m.name.name === method.name.name);
@@ -137,7 +128,6 @@ export class Application {
                 ['generatedGetters', generatedGetters],
                 ['generatedSetters', generatedSetters],
             ]));
-
         });
     }
 
@@ -365,7 +355,13 @@ export class Application {
             const classNode = this.ast.children.find((node: any) => node.kind === 'class' && node.name.name === className);
             const parameterNode = classContent.get('parameterNode');
             let properties = classContent.get('properties');
+            let methods = classContent.get('methods');
             let constructorMethod = classContent.get('constructorMethod');
+            const constructorIndex = classNode.body.findIndex((m: any) => m.kind === "method" && m.name.name === '__construct');
+
+            if(-1 === constructorIndex) {
+                classNode.body.splice(properties.size, 0, constructorMethod);
+            }
 
             const constructorMethodArguments = new Map<string, any>();
             const constructorBody = new Map<string, any>();
@@ -457,6 +453,12 @@ export class Application {
             });
 
             constructorMethod.arguments.reverse();
+
+            methods.forEach((prop: any) => {
+                if(classNode.body.filter((item: any) => item.kind === 'method' && item.name.name === prop.name.name).length <= 0) {
+                    classNode.body.push(prop);
+                }
+            });
         }
 
         const edit = new vscode.WorkspaceEdit();
