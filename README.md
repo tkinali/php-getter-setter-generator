@@ -2,7 +2,7 @@
 
 # PHP Getter, Setter and Constructor Generator
 
-This VS Code extension is designed to accelerate the workflow of PHP developers. It automatically generates getter and setter methods and constructors for the private properties of classes in the currently open PHP file. Unlike other similar extensions, this extension supports files containing multiple classes and allows you to select properties separately for each class.
+This VS Code extension is designed to accelerate the workflow of PHP developers. It automatically generates getter and setter methods and constructors for the private and protected properties of classes in the currently open PHP file. Unlike other similar extensions, this extension supports files containing multiple classes and allows you to select properties separately for each class.
 
 ## Features
 

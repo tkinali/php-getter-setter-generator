@@ -13,7 +13,7 @@ interface tQuickPickItem extends vscode.QuickPickItem {
 }
 
 export class Application {
-    private l10nPath: string
+    private l10nPath: string;
     private document: any;
     private messages: any;
     private config: vscode.WorkspaceConfiguration;
@@ -73,6 +73,7 @@ export class Application {
             const generatedSetters = new Map<string, any>();
 
             const properties = classNode.body.filter((node: any) => node.kind === 'propertystatement');
+
             properties.forEach((prop: any) => {
                 const property = prop.properties[0];
                 property.visibility = prop.visibility;
@@ -80,10 +81,21 @@ export class Application {
                 classProperties.set(property.name.name, property);
                 const funcName = property.name.name.charAt(0).toUpperCase() + property.name.name.slice(1);
 
+                let propertyType: string = '';
+                if(property.type) {
+                    if('typereference' === property.type.kind || 'name' === property.type.kind) {
+                        propertyType = property.type.name;
+                    } else if('uniontype' === property.type.kind) {
+                        propertyType = property.type.types.map((item: any) => item.name).join('|');
+                    } else if('intersectiontype' === property.type.kind) {
+                        propertyType = property.type.types.map((item: any) => item.name).join('&');
+                    }
+                }
+
                 const replacements = {
                     'name': funcName,
                     'variable': property.name.name,
-                    'type': property.type ? property.type.name : "",
+                    'type': propertyType,
                     'nullable': property.nullable ? '?' : '',
                 };
 
@@ -131,7 +143,7 @@ export class Application {
         });
     }
 
-    private replaceTemplate(template: string, replacements: Record<string, string>): string
+    private replaceTemplate(template: string, replacements: Record<string, any>): string
     {
         let result = template;
 
@@ -159,8 +171,7 @@ export class Application {
             let methods = new Map<string, any>();
 
             classContent.get('properties').forEach((prop: any) => {
-                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name);
-                //const isSelected = selectedVars.some((selected: any) => selected.variable.variable === prop.name.name );
+                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name && selected.className === className);
                 const propName = prop.name.name.charAt(0).toUpperCase() + prop.name.name.slice(1);
                 const getterKey = 'get' + propName;
                 const setterKey = 'set' + propName;
@@ -204,33 +215,31 @@ export class Application {
             const properties = classContent.get('properties');
 
             for(let [property, node] of properties) {
-                if(constructor ? true : 'private' == node.visibility) {
-                    const propName = node.name.name.charAt(0).toUpperCase() + node.name.name.slice(1);
-                    const getterExists = classContent.get('methods').has('get' + propName);
-                    const setterExists = classContent.get('methods').has('set' + propName);
-                    const constructorArgumentExists = classContent.get('constructorMethod').arguments.filter((item: any) => item.name.name === node.name.name).length > 0;
+                const propName = node.name.name.charAt(0).toUpperCase() + node.name.name.slice(1);
+                const getterExists = classContent.get('methods').has('get' + propName);
+                const setterExists = classContent.get('methods').has('set' + propName);
+                const constructorArgumentExists = classContent.get('constructorMethod').arguments.filter((item: any) => item.name.name === node.name.name).length > 0;
 
-                    const descriptions = [node.visibility];
-                    if(node.type?.name) {
-                        descriptions.push(node.type?.name);
-                    }
-                    if(node.nullable) {
-                        descriptions.push('null');
-                    }
-
-                    quickPickItems.push({
-                        label: `$${property}`,
-                        description: `${descriptions.join(' | ')}`,
-                        picked: constructor ? !constructorArgumentExists : (getter && setter ? (!getterExists && !setterExists) : (getter ? !getterExists : (setter ? !setterExists : false))),
-                        kind: vscode.QuickPickItemKind.Default,
-                        className: className,
-                        variable: property,
-                        name: propName,
-                        getterExists: getterExists,
-                        setterExists: setterExists,
-                        constructorArgumentExists: constructorArgumentExists
-                    });
+                const descriptions = [node.visibility];
+                if(node.type?.name) {
+                    descriptions.push(node.type?.name);
                 }
+                if(node.nullable) {
+                    descriptions.push('null');
+                }
+
+                quickPickItems.push({
+                    label: `$${property}`,
+                    description: `${descriptions.join(' | ')}`,
+                    picked: constructor ? !constructorArgumentExists : (getter && setter ? (!getterExists && !setterExists) : (getter ? !getterExists : (setter ? !setterExists : false))),
+                    kind: vscode.QuickPickItemKind.Default,
+                    className: className,
+                    variable: property,
+                    name: propName,
+                    getterExists: getterExists,
+                    setterExists: setterExists,
+                    constructorArgumentExists: constructorArgumentExists
+                });
             }
         }
 
@@ -240,8 +249,7 @@ export class Application {
     private generateMethods(generateGetters: boolean, generateSetters: boolean, properties: any, selectedVars: any, className:string, classContent: any, classNode: any, methods: any)
     {
         properties.forEach((prop: any) => {
-            const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name);
-            //const isSelected = selectedVars.some((selected: any) => selected.variable.variable === prop.name.name );
+            const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name && selected.className === className);
             const propName = prop.name.name.charAt(0).toUpperCase() + prop.name.name.slice(1);
             const getterKey = 'get' + propName;
             const setterKey = 'set' + propName;
@@ -264,7 +272,7 @@ export class Application {
         });
     }
 
-    public async run(generateGetters: boolean = true, generateSetters: boolean = false): Promise<void>
+    public async run(generateGetters: boolean = true, generateSetters: boolean = false)
     {
         this.classData();
 
@@ -273,8 +281,18 @@ export class Application {
             return;
         }
 
-        const quickPickItems = this.prepareProperties(generateGetters, generateSetters);
-        const autoGenerate = this.config.get<boolean>('autoGenerate', false);
+        let quickPickItems = this.prepareProperties(generateGetters, generateSetters);
+        let autoGenerate = this.config.get<boolean>('autoGenerate', false);
+
+        const env = process.env.QUICKPICK_ITEMS;
+        if(env) {
+            const testQuickPickItems = JSON.parse(env) as tQuickPickItem[];
+            quickPickItems = testQuickPickItems;
+        }
+
+        if(process.env.TEST_MODE) {
+            autoGenerate = true;
+        }
 
         const selectedVars = autoGenerate ? quickPickItems.filter((item: any) => item.kind === 0).map(prop => { return prop; }) : await vscode.window.showQuickPick(quickPickItems,
             {
@@ -328,6 +346,8 @@ export class Application {
                 vscode.window.showErrorMessage(this.messages['phpgsg.message.error']);
             }
         });
+
+        return;
     }
 
     public async generateConstructor()
@@ -339,8 +359,20 @@ export class Application {
             return;
         }
 
-        const quickPickItems = this.prepareProperties(false, false, true);
-        const selectedVars = await vscode.window.showQuickPick(quickPickItems,
+        let quickPickItems = this.prepareProperties(false, false, true);
+        let autoGenerate = false;
+
+        const env = process.env.QUICKPICK_ITEMS;
+        if(env) {
+            const testQuickPickItems = JSON.parse(env) as tQuickPickItem[];
+            quickPickItems = testQuickPickItems;
+        }
+
+        if(process.env.TEST_MODE) {
+            autoGenerate = true;
+        }
+
+        const selectedVars = autoGenerate ? quickPickItems.filter((item: any) => item.kind === 0).map(prop => { return prop; }) : await vscode.window.showQuickPick(quickPickItems,
             {
                 placeHolder: this.messages['phpgsg.quickPick.constructor_placeholder'],
                 canPickMany: true
@@ -366,7 +398,7 @@ export class Application {
             const constructorMethodArguments = new Map<string, any>();
             const constructorBody = new Map<string, any>();
             constructorMethod.arguments.forEach((node: any) => {
-                constructorMethodArguments.set(node.name.name, node);
+                constructorMethodArguments.set(className + '_' + node.name.name, node);
             });
             constructorMethod.arguments.splice(0, constructorMethod.arguments.length);
 
@@ -375,48 +407,34 @@ export class Application {
             while (index >= 0) {
                 let node = children[index];
                 if(node?.expression?.left?.what?.kind === 'variable' && node?.expression?.left?.what?.name === 'this' && properties.has(node.expression.left.offset.name)) {
-                    constructorBody.set(node.expression.left.offset.name, node);
+                    constructorBody.set(className + '_' + node.expression.left.offset.name, node);
                     children.splice(index, 1);
                 }
                 index -= 1;
             }
 
             properties.forEach((prop: any) => {
-                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name);
+                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name && selected.className === className);
+                const parameterNode = {
+                    kind: 'parameter',
+                    attrGroups: [],
+                    byref: false,
+                    flags: 0,
+                    name: prop.name,
+                    nullable: prop.nullable,
+                    readonly: prop.readonly,
+                    type: prop.type,
+                    value: prop.value,
+                    variadic: false,
+                };
 
-                if(constructorMethodArguments.has(prop.name.name)) {
+                if(constructorMethodArguments.has(className + '_' + prop.name.name)) {
                     if(isSelected) {
-                        const parameterNode = {
-                            kind: 'parameter',
-                            attrGroups: [],
-                            byref: false,
-                            flags: 0,
-                            name: prop.name,
-                            nullable: prop.nullable,
-                            readonly: prop.readonly,
-                            type: prop.type,
-                            value: prop.value,
-                            variadic: false,
-                        };
-
                         constructorMethod.arguments.push(parameterNode);
                     } else {
-                        constructorMethod.arguments.push(constructorMethodArguments.get(prop.name.name));
+                        constructorMethod.arguments.push(constructorMethodArguments.get(className + "_" + prop.name.name));
                     }
                 } else if(isSelected) {
-                    const parameterNode = {
-                        kind: 'parameter',
-                        attrGroups: [],
-                        byref: false,
-                        flags: 0,
-                        name: prop.name,
-                        nullable: prop.nullable,
-                        readonly: prop.readonly,
-                        type: prop.type,
-                        value: prop.value,
-                        variadic: false,
-                    };
-
                     constructorMethod.arguments.push(parameterNode);
                 }
             });
@@ -424,7 +442,8 @@ export class Application {
             let reversedProperties = new Map(constructorMethod.arguments.reverse().map((obj: any) => [obj.name.name, obj]));
 
             reversedProperties.forEach((prop: any) => {
-                const expressionstatement = {
+                const isSelected = selectedVars.some((selected: any) => selected.variable === prop.name.name && selected.className === className);
+                const expressionStatementNode = {
                     kind: 'expressionstatement',
                     expression: {
                         kind: 'assign',
@@ -449,7 +468,15 @@ export class Application {
                     }
                 };
 
-                constructorMethod.body.children.unshift(expressionstatement);
+                if(constructorBody.has(className + '_' + prop.name.name)) {
+                    if(isSelected) {
+                        constructorMethod.body.children.unshift(expressionStatementNode);
+                    } else {
+                        constructorMethod.body.children.unshift(constructorBody.get(className + "_" + prop.name.name));
+                    }
+                } else if(isSelected) {
+                    constructorMethod.body.children.unshift(expressionStatementNode);
+                }
             });
 
             constructorMethod.arguments.reverse();
@@ -479,5 +506,7 @@ export class Application {
                 vscode.window.showErrorMessage(this.messages['phpgsg.message.constructor_error']);
             }
         });
+
+        return;
     }
 }

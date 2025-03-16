@@ -2,7 +2,7 @@
 
 # PHP Getter és Setter Generátor
 
-Ez a VS Code kiterjesztés a PHP fejlesztők munkafolyamatának felgyorsítására lett tervezve. Automatikusan generál getter és setter metódusokat és konstruktorokat az aktuálisan megnyitott PHP fájl osztályainak privát tulajdonságaihoz. Más hasonló kiterjesztésektől eltérően, ez a kiterjesztés támogatja a több osztályt tartalmazó fájlokat, és lehetővé teszi, hogy az egyes osztályok tulajdonságait külön-külön válassza ki.
+Ez a VS Code kiterjesztés a PHP fejlesztők munkafolyamatának felgyorsítására lett tervezve. Automatikusan generál getter és setter metódusokat, valamint konstruktorokat az aktuálisan megnyitott PHP fájl osztályainak `private` és `protected` tulajdonságaihoz. Más hasonló kiterjesztésektől eltérően ez a kiterjesztés támogatja a több osztályt tartalmazó fájlokat, és lehetővé teszi, hogy az egyes osztályokhoz külön-külön válasszon tulajdonságokat.
 
 ## Jellemzők
 

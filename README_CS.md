@@ -2,7 +2,7 @@
 
 # Generátor Getterů a Setterů pro PHP
 
-Toto rozšíření VS Code je navrženo tak, aby urychlilo pracovní postup PHP vývojářů. Automaticky generuje metody getter a setter a konstruktory pro soukromé vlastnosti tříd v aktuálně otevřeném souboru PHP. Na rozdíl od jiných podobných rozšíření toto rozšíření podporuje soubory obsahující více tříd a umožňuje vám vybírat vlastnosti samostatně pro každou třídu.
+Toto rozšíření pro VS Code je navrženo tak, aby urychlilo pracovní postup PHP vývojářů. Automaticky generuje getter a setter metody a konstruktory pro `private` a `protected` vlastnosti tříd v aktuálně otevřeném PHP souboru. Na rozdíl od jiných podobných rozšíření toto rozšíření podporuje soubory obsahující více tříd a umožňuje vám vybrat vlastnosti samostatně pro každou třídu.
 
 ## Funkce
 

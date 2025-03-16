@@ -2,7 +2,7 @@
 
 # PHP Getter ve Setter Generator
 
-Bu VS Code eklentisi, PHP geliştiricilerinin iş akışını hızlandırmak için tasarlanmıştır. Açık olan PHP dosyasındaki sınıfların private özellikleri için otomatik olarak getter ve setter metotları ve constructor'lar oluşturur. Diğer benzer eklentilerden farklı olarak, bu eklenti birden fazla sınıf içeren dosyaları destekler ve her sınıf için özellikleri ayrı ayrı seçmenize olanak tanır.
+Bu VS Code eklentisi, PHP geliştiricilerinin iş akışını hızlandırmak için tasarlanmıştır. Açık olan PHP dosyasındaki sınıfların `private` ve `protected` özelliklerine otomatik olarak getter ve setter yöntemleri ile kurucular oluşturur. Diğer benzer uzantılardan farklı olarak, bu uzantı birden fazla sınıf içeren dosyaları destekler ve her sınıf için özellikleri ayrı ayrı seçmenize olanak tanır.
 
 ## Özellikler
 

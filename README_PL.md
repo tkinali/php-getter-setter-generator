@@ -2,7 +2,7 @@
 
 # Generator Getterów i Setterów PHP
 
-To rozszerzenie VS Code zostało zaprojektowane, aby przyspieszyć przepływ pracy programistów PHP. Automatycznie generuje metody getter i setter oraz konstruktory dla prywatnych właściwości klas w aktualnie otwartym pliku PHP. W przeciwieństwie do innych podobnych rozszerzeń, to rozszerzenie obsługuje pliki zawierające wiele klas i pozwala na oddzielne wybieranie właściwości dla każdej klasy.
+To rozszerzenie VS Code zostało zaprojektowane, aby przyspieszyć przepływ pracy programistów PHP. Automatycznie generuje metody getter i setter oraz konstruktory dla `private` i `protected` właściwości klas w aktualnie otwartym pliku PHP. W przeciwieństwie do innych podobnych rozszerzeń, to rozszerzenie obsługuje pliki zawierające wiele klas i pozwala na oddzielne wybieranie właściwości dla każdej klasy.
 
 ## Funkcje
 
