@@ -399,7 +399,11 @@ export default class PHPUnparser {
                 break;
 
             case "retif":
-                $return = `${this.generatePHPCode(node.test)} ? ${this.generatePHPCode(node.trueExpr)} : ${this.generatePHPCode(node.falseExpr)}`;
+                if(node.trueExpr) {
+                    $return = `${this.generatePHPCode(node.test)} ? ${this.generatePHPCode(node.trueExpr)} : ${this.generatePHPCode(node.falseExpr)}`;
+                } else {
+                    $return = `${this.generatePHPCode(node.test)} ?: ${this.generatePHPCode(node.falseExpr)}`;
+                }
                 break;
 
             case "return":
